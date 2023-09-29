@@ -1,10 +1,15 @@
 import "./App.css";
-import Navigation from "./components/navigation/Navigation";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NavigationPanel from "./components/navigation/NavigationPanel";
 
 function App() {
   return (
-    <div className="containter">
-      <Navigation />
+    <div className="app-container">
+      <Router>
+        <Routes>
+          <Route path="/" element={<NavigationPanel />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
