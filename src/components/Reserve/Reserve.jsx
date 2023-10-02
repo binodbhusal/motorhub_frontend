@@ -1,14 +1,14 @@
 import React from 'react';
-import './lifestyle.scss';
+import './Reserve.scss';
 import NavigationPanel from '../navigation/NavigationPanel';
 import MobileNavbar from '../navigation/MobileNavbar';
 
-const LifeStyle = () => (
+const Reserve = () => (
   <div className="main-container">
     <MobileNavbar className="mobile-navbar" />
     <NavigationPanel className="left-panel" />
-    <div className="lifestyle-container">LifeStyle</div>
+    <div className="lifestyle-container">Reserve</div>
   </div>
 );
 
-export default LifeStyle;
+export default Reserve;

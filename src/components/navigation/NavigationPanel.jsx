@@ -4,10 +4,12 @@ import './NavigationPanel.scss';
 import logo from '../../assets/logo.png';
 
 const links = [
-  { path: '/', text: 'MODELS' },
-  { path: '/lifestyle', text: 'LIFESTYLE' },
-  { path: '/shop', text: 'SHOP' },
-  { path: '/test-drive', text: 'TEST DRIVE' },
+  { path: '/', text: 'Models' },
+  { path: '/Reserve', text: 'Reserve' },
+  { path: '/MyReservations', text: 'MyReservations' },
+  { path: '/AddMotor', text: 'AddMotor' },
+  { path: '/DeleteMotor', text: 'DeleteMotor' },
+  { path: '/NoMatch', text: 'NoMatch' },
   { path: '/log-out', text: 'LOG-OUT' },
 ];
 
