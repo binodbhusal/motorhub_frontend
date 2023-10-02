@@ -1,7 +1,8 @@
 import React from "react";
+import "./motor.scss";
 
 const Motor = () => {
-  return <div>Motor</div>;
+  return <div className="motor-container">Motor</div>;
 };
 
 export default Motor;

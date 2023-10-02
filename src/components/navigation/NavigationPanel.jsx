@@ -1,26 +1,27 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./NavigationPanel.scss";
+import logo from "../../assets/logo.png";
 
 const links = [
   { path: "/", text: "MODELS" },
-  { path: "/", text: "LIFESTYLE" },
-  { path: "/", text: "SHOP" },
-  { path: "/", text: "TEST DRIVE" },
-  { path: "/", text: "LOG-OUT" },
+  { path: "/lifestyle", text: "LIFESTYLE" },
+  { path: "/shop", text: "SHOP" },
+  { path: "/test-drive", text: "TEST DRIVE" },
+  { path: "/log-out", text: "LOG-OUT" },
 ];
 
 const NavigationPanel = () => {
   return (
     <div className="navigation-container">
       <div className="logo-container">
-        <h3>Motorcycle</h3>
+        <img src={logo} alt="Logo-Image" className="motor-logo" />
       </div>
       <div className="navigation-item">
         <ul className="ul-element">
           {links.map((link) => (
             <li key={link.text} className="nav-link">
-              <NavLink to="/" className="navlink-class">
+              <NavLink to={link.path} className="navlink-class">
                 <p className="nav-item">{link.text}</p>
               </NavLink>
             </li>

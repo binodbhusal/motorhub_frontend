@@ -1,14 +1,17 @@
 .navigation-container{
-    width: 18rem;
+    width: 20%;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    position: relative;
+    position: fixed;
     border: 2px solid green;
     .logo-container{
         align-self: center;
         margin-top: 3rem;
         margin-bottom: 7rem;
+        .motor-logo{
+            width: 100px;
+        }
     }
     .navigation-item{
         align-self: flex-end;
@@ -28,6 +31,9 @@
                 width: 100%;
                 .navlink-class{
                     text-decoration: none;
+                    .active{
+                        background-color: var(--secondary-color);
+                    }
                 }
                 .nav-item{
                     text-decoration: none ;
@@ -37,7 +43,7 @@
                     width: 100%;
                     height: 100%;
                 }
-                .nav-item:hover{
+                .nav-item:not(.active):hover{
                     background-color: var(--secondary-color);
                     color:var(--white-color);
                     text-align: center;
@@ -53,6 +59,10 @@
         width: 40%;
         display: flex;
         justify-content: space-between;
+    }
+    
+    @media screen and (max-width: 850px){
+        display: none;
     }
    
 }
