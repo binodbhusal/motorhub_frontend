@@ -1,8 +1,6 @@
-import React from "react";
-import "./motor.scss";
+import React from 'react';
+import './motor.scss';
 
-const Motor = () => {
-  return <div className="motor-container">Motor</div>;
-};
+const Motor = () => <div className="motor-container">Motor</div>;
 
 export default Motor;

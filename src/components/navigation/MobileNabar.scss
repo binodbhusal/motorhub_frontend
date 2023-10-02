@@ -1,23 +1,115 @@
-.navbar-container{
-    position: fixed;
+.navbar-container {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  width: 100%;
+  height: 5rem;
+  background-color: var(--secondary-color);
+
+  @media screen and (min-width: 850px) {
+    display: none;
+  }
+
+  @media screen and (max-width: 850px) {
     display: flex;
-    align-items: center;
-    padding-left: 3rem;
-    padding-right: 3rem;
-    width: 100%;
-    height: 5rem;
-    background-color: var(--secondary-color);
-    @media  screen and (min-width: 850px) {
-        display: none;
+  }
+
+  .mobile-navbar-logo {
+    flex: 1;
+    text-align: center;
+
+    .motor-logo {
+      width: 85px;
     }
-    @media  screen and (max-width: 850px) {
-        display: flex;
+  }
+
+  .mobile-toggle-menu {
+    display: flex;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.25rem;
+    height: 2rem;
+
+    span {
+      height: 0.4rem;
+      width: 100%;
+      background-color: var(--white-color);
+      border-radius: 0.2rem;
     }
-    .mobile-navbar-logo {
-        flex: 1;
-        text-align: center; 
+  }
+}
+
+.navigation-item {
+  display: none;
+}
+
+.navigation-item.open {
+  width: 20%;
+  padding-top: 6rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  border: 2px solid green;
+
+  .navigation-item {
+    align-self: flex-end;
+    display: flex;
+    width: 90%;
+
+    .ul-element {
+      width: 100%;
+      align-items: flex-end;
+      display: flex;
+      flex-direction: column;
+
+      .nav-link {
+        align-self: flex-start;
+        list-style: none;
+        margin-bottom: 15px;
+        width: 100%;
+
+        .navlink-class {
+          text-decoration: none;
+
+          .active {
+            background-color: var(--secondary-color);
+          }
+        }
+
+        .nav-item {
+          text-decoration: none;
+          color: var(--black-color);
+          font-weight: 600;
+          font-size: 1.2rem;
+          width: 100%;
+          height: 100%;
+        }
+
+        .nav-item:not(.active):hover {
+          background-color: var(--secondary-color);
+          color: var(--white-color);
+          text-align: center;
+        }
       }
-      .motor-logo{
-        width: 85px;
-      }
+    }
+  }
+
+  .social-media-container {
+    position: absolute;
+    bottom: 2rem;
+    align-self: center;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media screen and (min-width: 850px) {
+    display: none;
+  }
 }

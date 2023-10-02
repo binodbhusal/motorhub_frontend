@@ -1,7 +1,7 @@
-import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import MainPage from "./components/mainpage/MainPage";
-import LifeStyle from "./components/lifestyle/LifeStyle";
+import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import MainPage from './components/mainpage/MainPage';
+import LifeStyle from './components/lifestyle/LifeStyle';
 
 function App() {
   return (
