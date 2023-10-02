@@ -20,7 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_29_141806) do
     t.string "brand_name"
     t.integer "model_no"
     t.string "manufacturer"
-    t.date "manufacturer_date"
+    t.date "manufacture_date"
     t.text "description"
     t.string "photo"
     t.float "unit_price"

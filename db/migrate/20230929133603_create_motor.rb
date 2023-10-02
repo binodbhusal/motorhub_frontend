@@ -6,7 +6,7 @@ class CreateMotor < ActiveRecord::Migration[7.0]
       t.string :brand_name
       t.integer :model_no
       t.string :manufacturer
-      t.date :manufacturer_date
+      t.date :manufacture_date
       t.text :description
       t.string :photo
       t.float :unit_price
