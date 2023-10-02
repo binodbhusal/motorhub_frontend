@@ -2,7 +2,7 @@ class Api::MotorsController < ApplicationController
   before_action :set_motor, only: %i[show update destroy]
 
   # GET /motors
-  def random
+  def index
     @motors = Motor.all
     @motors = @motors.where(brand_name: params[:brand_name]) if params[:brand_name].present?
     @motors = @motors.paginate(page: params[:page], per_page: params[:per_page] || 10)
@@ -51,8 +51,8 @@ class Api::MotorsController < ApplicationController
   private
 
   def set_motor
-    if params[:id] == 'random'
-      random
+    if params[:id] == 'index'
+      index
     else
       @motor = Motor.find_by(id: params[:id])
 
