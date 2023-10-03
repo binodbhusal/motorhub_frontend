@@ -1,0 +1,85 @@
+.navbar-container {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  width: 100%;
+  height: 5rem;
+  background-color: var(--secondary-color);
+
+  @media screen and (min-width: 850px) {
+    display: none;
+  }
+
+  @media screen and (max-width: 850px) {
+    display: flex;
+  }
+
+  .mobile-navbar-logo {
+    flex: 1;
+    text-align: center;
+
+    .motor-logo {
+      width: 85px;
+    }
+  }
+
+  .mobile-toggle-menu {
+    display: flex;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.25rem;
+    height: 2rem;
+
+    span {
+      height: 0.4rem;
+      width: 100%;
+      background-color: var(--white-color);
+      border-radius: 0.2rem;
+    }
+  }
+}
+
+.navbar-container.display {
+  display: none;
+}
+
+.navigation-item {
+  display: none;
+}
+
+.navigation-item.open {
+  z-index: 100;
+  width: 35%;
+  padding-top: 6rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  border: 2px solid green;
+  background-color: var(--secondary-color);
+
+  .navlink-class {
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  @media screen and (min-width: 850px) {
+    display: none;
+  }
+
+  .social-media-container {
+    position: absolute;
+    bottom: 2rem;
+    align-self: center;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
