@@ -1,16 +1,16 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import "./NavigationPanel.scss";
-import logo from "../../assets/logo.png";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import './NavigationPanel.scss';
+import logo from '../../assets/logo.png';
 
 const links = [
-  { path: "/", text: "Motors" },
-  { path: "/Reserve", text: "Reserve" },
-  { path: "/MyReservations", text: "MyReservations" },
-  { path: "/AddMotor", text: "AddMotor" },
-  { path: "/DeleteMotor", text: "DeleteMotor" },
-  { path: "/NoMatch", text: "NoMatch" },
-  { path: "/log-out", text: "LOG-OUT" },
+  { path: '/', text: 'Motors' },
+  { path: '/Reserve', text: 'Reserve' },
+  { path: '/MyReservations', text: 'MyReservations' },
+  { path: '/AddMotor', text: 'AddMotor' },
+  { path: '/DeleteMotor', text: 'DeleteMotor' },
+  { path: '/NoMatch', text: 'NoMatch' },
+  { path: '/log-out', text: 'LOG-OUT' },
 ];
 
 const NavigationPanel = () => (
