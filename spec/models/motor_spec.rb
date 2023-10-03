@@ -63,14 +63,12 @@ RSpec.describe Motor, type: :model do
     expect(motor).not_to be_valid
   end
 
-
   it 'is not valid without finance_fee' do
     motor = Motor.new(user_id: @user.id, location_id: @store_location.id, unit_price: 10, purchase_fee: 10,
                       total_price: 10, brand_name: 'Suzuki', model_no: 1234, manufacturer: 'mitsubishi',
                       manufacture_date: '2022-10-20', description: 'motor', photo: 'https://motor.jpeg')
     expect(motor).not_to be_valid
   end
-
 
   it 'is not valid with a negative total_price' do
     motor = Motor.new(user_id: @user.id, location_id: @store_location.id, unit_price: 10, purchase_fee: 10,
@@ -81,14 +79,12 @@ RSpec.describe Motor, type: :model do
     expect(motor).not_to be_valid
   end
 
-
   it 'is not valid without total_price' do
     motor = Motor.new(user_id: @user.id, location_id: @store_location.id, unit_price: 10, purchase_fee: 10,
                       finance_fee: 10, brand_name: 'Suzuki', model_no: 1234, manufacturer: 'mitsubishi',
                       manufacture_date: '2022-10-20', description: 'motor', photo: 'https://motor.jpeg')
     expect(motor).not_to be_valid
   end
-
 
   it 'is not valid without a brand_name' do
     motor = Motor.new(user_id: @user.id, location_id: @store_location.id, unit_price: 10, purchase_fee: 10,
