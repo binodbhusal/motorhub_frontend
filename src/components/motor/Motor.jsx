@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { motorsItem } from '../../redux/slice/motorSlice';
-import './motor.scss';
+import './motor.css';
 
 const Motor = () => {
     const dispatch = useDispatch();
@@ -11,11 +11,24 @@ const Motor = () => {
     }, [dispatch])
 
     return (
-        <>
-            {motorData.map((item) => (
-                <h1>{item.brand_name}</h1>
-            ))}
-        </>
+        <div className="motor-container">
+            <div className="models-titles">
+                <h1>Latest models</h1>
+                <h5>Please select a model</h5>
+            </div>
+                <div className="motor-cards-cont">
+                {motorData.map((item) => (
+                    <div className="single-motor-cont">
+                        <img src={item.photo} alt={ item.brand_name } />
+                        <h4>
+                            <span>{item.brand_name }</span>{" "}
+                            <span>{ item.model_no }</span>
+                        </h4>
+                        <p>{ item.description }</p>
+                    </div>
+                ))}
+            </div>
+        </div>
     );
 }
 
