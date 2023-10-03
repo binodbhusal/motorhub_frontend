@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import './MobileNabar.scss';
-import { NavLink } from 'react-router-dom';
-import logo from '../../assets/logo.png';
+import React, { useState } from "react";
+import "./MobileNabar.scss";
+import { NavLink } from "react-router-dom";
+import logo from "../../assets/logo.png";
 
 const links = [
-  { path: '/', text: 'Models' },
-  { path: '/Reserve', text: 'Reserve' },
-  { path: '/MyReservations', text: 'MyReservations' },
-  { path: '/AddMotor', text: 'AddMotor' },
-  { path: '/DeleteMotor', text: 'DeleteMotor' },
-  { path: '/NoMatch', text: 'NoMatch' },
-  { path: '/log-out', text: 'LOG-OUT' },
+  { path: "/", text: "Motors" },
+  { path: "/Reserve", text: "Reserve" },
+  { path: "/MyReservations", text: "MyReservations" },
+  { path: "/AddMotor", text: "AddMotor" },
+  { path: "/DeleteMotor", text: "DeleteMotor" },
+  { path: "/NoMatch", text: "NoMatch" },
+  { path: "/log-out", text: "LOG-OUT" },
 ];
 
 const MobileNavbar = () => {
@@ -23,7 +23,7 @@ const MobileNavbar = () => {
   };
   return (
     <>
-      <div className={`navbar-container ${displayNavbar ? 'display' : ''}`}>
+      <div className={`navbar-container ${displayNavbar ? "display" : ""}`}>
         <div className="mobile-toggle-menu" onClick={handleToggleMenu}>
           <span />
           <span />
@@ -33,7 +33,7 @@ const MobileNavbar = () => {
           <img src={logo} alt="Logo" className="motor-logo" />
         </div>
       </div>
-      <div className={`navigation-item ${menuOpen ? 'open' : ''}`}>
+      <div className={`navigation-item ${menuOpen ? "open" : ""}`}>
         <ul className="ul-element">
           {links.map((link) => (
             <li key={link.text} className="nav-link">
