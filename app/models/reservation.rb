@@ -3,4 +3,5 @@ class Reservation < ApplicationRecord
   belongs_to :user, foreign_key: 'user_id'
 
   validates :city_name, presence: true
+  validates :reserve_date, presence: true
 end
