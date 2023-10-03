@@ -24,7 +24,12 @@ const Motor = () => {
                             <span>{item.brand_name }</span>{" "}
                             <span>{ item.model_no }</span>
                         </h4>
-                        <p>{ item.description }</p>
+                        <p>{item.description}</p>
+                        <div className="social-links">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
                     </div>
                 ))}
             </div>
