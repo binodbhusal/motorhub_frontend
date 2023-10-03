@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import motorReducer from './features/motorSlice';
+import motorReducer from './slice/motorSlice';
 
 const store = configureStore({
     reducer: {
