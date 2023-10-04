@@ -5,7 +5,7 @@ const MOTORS_LINK = 'http://localhost:3000/api/motors/index';
 
 export const motorsItem = createAsyncThunk('motor', async () => {
   const response = await axios.get(MOTORS_LINK);
-  return response.data
+  return response.data;
 });
 
 const initialState = {
