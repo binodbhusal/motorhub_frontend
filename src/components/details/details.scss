@@ -1,0 +1,47 @@
+.lifestyle-container.grid-details {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  margin: 5% 5% 5% 10%;
+}
+
+.img-container img { //to hold the image
+  width: 100%;
+}
+
+.details-cont h2 {
+  text-align: end;
+  margin-bottom: 10px;
+}
+
+.info-motor-cont p {
+  font-size: 18px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-motor-cont p:nth-child(even) {
+  background: #e2e3e5;
+  padding: 15px 20px;
+}
+
+.reserve-btn {
+  background: rgb(41, 41, 68);
+  float: right;
+  margin-top: 50px;
+  color: #fff;
+  border: none;
+  height: 70px;
+  width: 200px;
+  border-radius: 70px;
+  font-size: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-left: 50px;
+}
+
+.reserve-btn i {
+  font-size: 25px;
+}
