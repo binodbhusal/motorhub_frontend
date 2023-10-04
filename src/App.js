@@ -6,6 +6,7 @@ import MyReservations from './components/MyReservations/MyReservations';
 import AddMotor from './components/AddMotor/AddMotor';
 import DeleteMotor from './components/DeleteMotor/DeleteMotor';
 import NoMatch from './NoMatch/NoMatch';
+import MotorDetails from './components/details/MotorDetails';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/MyReservations" element={<MyReservations />} />
           <Route path="/AddMotor" element={<AddMotor />} />
           <Route path="/DeleteMotor" element={<DeleteMotor />} />
+          <Route path="/MotorDetails/:id" element={<MotorDetails />} />
           <Route path="*" element={<NoMatch />} />
         </Routes>
       </Router>
