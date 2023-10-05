@@ -1,0 +1,17 @@
+.main-container {
+  position: relative;
+
+  .left-panel {
+    position: fixed;
+  }
+
+  .mobile-navbar {
+    position: fixed;
+  }
+
+  .addmotor-container {
+    position: absolute;
+    top: 5rem;
+    left: 20%;
+  }
+}
