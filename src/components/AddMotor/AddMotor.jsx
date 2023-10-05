@@ -40,8 +40,8 @@ const AddMotor = () => {
   const handleUnitPriceChange = (e) => {
     const unitPrice = e.target.value;
     // Calculate purchase_fee, finance_fee, and total_price based on unitPrice (adjust this calculation as needed)
-    const purchase_fee = unitPrice * 0.9; // Example calculation
-    const finance_fee = unitPrice * 0.8; // Example calculation
+    const purchase_fee = unitPrice * 0.2; // Example calculation
+    const finance_fee = unitPrice * 0.1; // Example calculation
     const total_price = unitPrice + purchase_fee + finance_fee; // Example calculation
 
     setMotorData({
@@ -69,112 +69,136 @@ const AddMotor = () => {
       <MobileNavbar className="mobile-navbar" />
       <NavigationPanel className="left-panel" />
       <div className="addmotor-container">
-        <h2>Enter Store Location Data</h2>
-        <form onSubmit={handleCombinedSubmit}>
-          <input
-            type="text"
-            name="city_name"
-            value={locationData.city_name}
-            onChange={handleLocationChange}
-          />
-
-          <h2>Enter Motor Data</h2>
-          <label htmlFor="brand_name">
-            Brand Name:
-            <input
-              type="text"
-              name="brand_name"
-              value={motorData.brand_name}
-              onChange={handleMotorChange}
-            />
-          </label>
-          <label htmlFor="model_no">
-            Model No:
-            <input
-              type="number"
-              name="model_no"
-              value={motorData.model_no}
-              onChange={handleMotorChange}
-            />
-          </label>
-          <label htmlFor="manufacturer">
-            Manufacturer:
-            <input
-              type="text"
-              name="manufacturer"
-              value={motorData.manufacturer}
-              onChange={handleMotorChange}
-            />
-          </label>
-          <label htmlFor="manufacture_date">
-            Manufacturer Date:
-            <input
-              type="date"
-              name="manufacture_date"
-              value={motorData.manufacture_date}
-              onChange={handleMotorChange}
-            />
-          </label>
-          <label htmlFor="description">
-            Description:
-            <input
-              type="text"
-              name="description"
-              value={motorData.description}
-              onChange={handleMotorChange}
-            />
-          </label>
-          <label htmlFor="photo">
-            Photo Url:
-            <input
-              type="text"
-              name="photo"
-              value={motorData.photo}
-              onChange={handleMotorChange}
-            />
-          </label>
-          <label htmlFor="unit_price">
-            Unit Price:
-            <input
-              type="number"
-              name="unit_price"
-              value={motorData.unit_price}
-              onChange={handleUnitPriceChange}
-            />
-          </label>
-          <label htmlFor="purchase_fee">
-            Purchase Fee:
-            <input
-              type="number"
-              name="purchase_fee"
-              value={motorData.purchase_fee}
-              onChange={handleMotorChange}
-              readOnly
-            />
-          </label>
-          <label htmlFor="finance_fee">
-            Finance Fee:
-            <input
-              type="number"
-              name="finance_fee"
-              value={motorData.finance_fee}
-              onChange={handleMotorChange}
-              readOnly
-            />
-          </label>
-          <label htmlFor="total_price">
-            Total Price:
-            <input
-              type="number"
-              name="total_price"
-              value={motorData.total_price}
-              onChange={handleMotorChange}
-              readOnly
-            />
-          </label>
-          {/* Add more motor fields as needed */}
-          <button type="submit">Submit Location and Motor</button>
-        </form>
+        <div className="form-container">
+          <form onSubmit={handleCombinedSubmit} className="submit-form">
+            <div className="location-container">
+              <h5>Add Location Name:</h5>
+              <div className="form-group location-input">
+                <input
+                  type="text"
+                  className="form-control"
+                  name="city_name"
+                  value={locationData.city_name}
+                  onChange={handleLocationChange}
+                  placeholder="Location Name:"
+                />
+              </div>
+            </div>
+            <h5>Enter Motor Data</h5>
+            <div className="sub-container">
+              <div className="group-form">
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    placeholder="Brand Name:"
+                    type="text"
+                    name="brand_name"
+                    value={motorData.brand_name}
+                    onChange={handleMotorChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    placeholder="Model No:"
+                    type="number"
+                    name="model_no"
+                    value={motorData.model_no}
+                    onChange={handleMotorChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    placeholder="Manufacturer:"
+                    type="text"
+                    name="manufacturer"
+                    value={motorData.manufacturer}
+                    onChange={handleMotorChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    placeholder="Manufacturer Date:"
+                    type="date"
+                    name="manufacture_date"
+                    value={motorData.manufacture_date}
+                    onChange={handleMotorChange}
+                  />
+                </div>
+              </div>
+              <div className="group-form">
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    placeholder="Photo URL:"
+                    type="text"
+                    name="photo"
+                    value={motorData.photo}
+                    onChange={handleMotorChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    placeholder="Unit Price:"
+                    type="number"
+                    name="unit_price"
+                    value={motorData.unit_price}
+                    onChange={handleUnitPriceChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    placeholder="Purchase Fee:"
+                    type="number"
+                    name="purchase_fee"
+                    value={motorData.purchase_fee}
+                    onChange={handleMotorChange}
+                    readOnly
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    placeholder=" Finance Fee:"
+                    type="number"
+                    name="finance_fee"
+                    value={motorData.finance_fee}
+                    onChange={handleMotorChange}
+                    readOnly
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    placeholder="Total Price:"
+                    type="number"
+                    name="total_price"
+                    value={motorData.total_price}
+                    onChange={handleMotorChange}
+                    readOnly
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="text-area">
+              <textarea
+                className="form-control"
+                placeholder="Description:"
+                type="text"
+                name="description"
+                value={motorData.description}
+                onChange={handleMotorChange}
+              />
+            </div>
+            <button type="submit" className="btn btn-outline-success">
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );
