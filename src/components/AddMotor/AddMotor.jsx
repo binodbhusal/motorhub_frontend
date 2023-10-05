@@ -1,35 +1,33 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { createLocation } from "../../redux/slice/locationSlice";
-import { createMotor } from "../../redux/slice/fetchdata";
-import MobileNavbar from "../navigation/MobileNavbar";
-import NavigationPanel from "../navigation/NavigationPanel";
-import "./AddMotor.scss";
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { createLocation } from '../../redux/slice/locationSlice';
+import { createMotor } from '../../redux/slice/fetchdata';
+import MobileNavbar from '../navigation/MobileNavbar';
+import NavigationPanel from '../navigation/NavigationPanel';
+import './AddMotor.scss';
 
 const AddMotor = () => {
   const dispatch = useDispatch();
 
   const [locationData, setLocationData] = useState({
-    city_name: "",
+    city_name: '',
   });
 
   const [motorData, setMotorData] = useState({
     location_id: locationData.id,
-    brand_name: "",
-    model_no: "",
-    manufacturer: "",
-    manufacture_date: "",
-    description: "",
-    photo: "",
-    unit_price: "",
-    purchase_fee: "",
-    finance_fee: "",
-    total_price: "",
+    brand_name: '',
+    model_no: '',
+    manufacturer: '',
+    manufacture_date: '',
+    description: '',
+    photo: '',
+    unit_price: '',
+    purchase_fee: '',
+    finance_fee: '',
+    total_price: '',
   });
   const handleLocationChange = (e) => {
     const newValue = e.target.value;
-    console.log("Location Data:", locationData);
-    console.log("New Value:", newValue);
     setLocationData({ ...locationData, [e.target.name]: newValue });
     setMotorData({ ...motorData, city_name: newValue });
   };
@@ -39,17 +37,16 @@ const AddMotor = () => {
 
   const handleUnitPriceChange = (e) => {
     const unitPrice = e.target.value;
-    // Calculate purchase_fee, finance_fee, and total_price based on unitPrice (adjust this calculation as needed)
-    const purchase_fee = unitPrice * 0.2; // Example calculation
-    const finance_fee = unitPrice * 0.1; // Example calculation
-    const total_price = unitPrice + purchase_fee + finance_fee; // Example calculation
+    const purchaseFee = unitPrice * 0.2; // Example calculation
+    const financeFee = unitPrice * 0.1; // Example calculation
+    const totalPrice = unitPrice + purchaseFee + financeFee; // Example calculation
 
     setMotorData({
       ...motorData,
       unit_price: unitPrice,
-      purchase_fee: purchase_fee,
-      finance_fee: finance_fee,
-      total_price: total_price,
+      purchase_fee: purchaseFee,
+      finance_fee: financeFee,
+      total_price: totalPrice,
     });
   };
 
