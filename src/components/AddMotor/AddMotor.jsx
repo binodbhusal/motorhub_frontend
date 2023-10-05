@@ -9,12 +9,13 @@ import './AddMotor.scss';
 const AddMotor = () => {
   const dispatch = useDispatch();
 
-  const [locationData, setLocationData] = useState({
+  // Define initial state for locationData and motorData
+  const initialLocationData = {
     city_name: '',
-  });
+  };
 
-  const [motorData, setMotorData] = useState({
-    location_id: locationData.id,
+  const initialMotorData = {
+    location_id: initialLocationData.id,
     brand_name: '',
     model_no: '',
     manufacturer: '',
@@ -25,21 +26,27 @@ const AddMotor = () => {
     purchase_fee: '',
     finance_fee: '',
     total_price: '',
-  });
+  };
+
+  // Initialize state with initial values
+  const [locationData, setLocationData] = useState(initialLocationData);
+  const [motorData, setMotorData] = useState(initialMotorData);
+
   const handleLocationChange = (e) => {
     const newValue = e.target.value;
     setLocationData({ ...locationData, [e.target.name]: newValue });
     setMotorData({ ...motorData, city_name: newValue });
   };
+
   const handleMotorChange = (e) => {
     setMotorData({ ...motorData, [e.target.name]: e.target.value });
   };
 
   const handleUnitPriceChange = (e) => {
-    const unitPrice = e.target.value;
-    const purchaseFee = unitPrice * 0.2; // Example calculation
-    const financeFee = unitPrice * 0.1; // Example calculation
-    const totalPrice = unitPrice + purchaseFee + financeFee; // Example calculation
+    const unitPrice = parseFloat(e.target.value);
+    const purchaseFee = unitPrice * 0.2;
+    const financeFee = unitPrice * 0.1;
+    const totalPrice = unitPrice + purchaseFee + financeFee;
 
     setMotorData({
       ...motorData,
@@ -54,13 +61,18 @@ const AddMotor = () => {
     e.preventDefault();
     const combinedData = {
       stores_location: {
-        city_name: locationData.city_name, // Include city_name here
+        city_name: locationData.city_name,
       },
       motor: motorData,
     };
     dispatch(createLocation(combinedData.stores_location));
     dispatch(createMotor(combinedData.motor));
+
+    // Reset the input fields to their initial values
+    setLocationData(initialLocationData);
+    setMotorData(initialMotorData);
   };
+
   return (
     <div className="main-container">
       <MobileNavbar className="mobile-navbar" />
@@ -200,4 +212,5 @@ const AddMotor = () => {
     </div>
   );
 };
+
 export default AddMotor;

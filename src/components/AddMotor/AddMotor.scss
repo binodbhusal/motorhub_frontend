@@ -1,71 +1,81 @@
 .main-container {
   position: relative;
- 
+
   .left-panel {
     position: fixed;
     left: 0;
     top: 0;
   }
+
   .mobile-navbar {
     position: fixed;
-    
   }
-    .addmotor-container {
-      width: 80%;
-      position: absolute;
+
+  .addmotor-container {
+    width: 80%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 10rem;
+    left: 20%;
+
+    .form-container {
       display: flex;
+      align-self: center;
       align-items: center;
+      flex-direction: column;
       justify-content: center;
-      top: 10rem;
-      left: 20%;
-      .form-container{
+      width: 65%;
+
+      .submit-form {
         display: flex;
-        align-self: center;
-        align-items: center;
         flex-direction: column;
-        justify-content: center;
-        width: 65%;
-        .submit-form{   
+        width: 100%;
+
+        .location-container {
           display: flex;
-          flex-direction: column;
-          width: 100%;
-          .location-container{
-            display: flex;
-            .location-input{
-              width: 50%;
-              margin-left: 20%;
-              margin-bottom: 20px;
-            }
+
+          .location-input {
+            width: 50%;
+            margin-left: 20%;
+            margin-bottom: 20px;
           }
-          h5{
-            margin-left: 20px;
-            margin-right: 15px;
-            padding: 0;
+        }
+
+        h5 {
+          margin-left: 20px;
+          margin-right: 15px;
+          padding: 0;
+        }
+
+        .text-area {
+          width: 95%;
+          height: 5rem;
+          align-self: center;
+        }
+
+        .sub-container {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+
+          .group-form {
+            width: 45%;
           }
-          .text-area{
-            width: 95%;
-            height: 5rem;
-            align-self: center;
+
+          .form-group {
+            margin-bottom: 6px;
           }
-         .sub-container{
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            .group-form{
-              width: 45%;
-            }
-            .form-group{
-              margin-bottom: 6px;
-            }
-         }
-         .btn{
+        }
+
+        .btn {
           font-size: 1.2rem;
           font-weight: 600;
           align-self: center;
           padding: 8px 25px;
-         }
         }
       }
     }
+  }
 }
- 
