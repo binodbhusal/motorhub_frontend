@@ -197,7 +197,7 @@ const AddMotor = () => {
                 onChange={handleMotorChange}
               />
             </div>
-            <button type="submit" className="btn btn-outline-warning">
+            <button type="submit" className="btn btn btn-outline-light">
               Submit
             </button>
           </form>
