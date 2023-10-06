@@ -1,18 +1,16 @@
-import React from "react";
-import NavigationPanel from "../navigation/NavigationPanel";
-import MobileNavbar from "../navigation/MobileNavbar";
-import "./DeleteMotor.scss";
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
-import { Link } from "react-router-dom";
-import { motorsItem, deleteMotorItem } from "../../redux/slice/motorSlice"; // Import the deleteMotorItem action
-
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
+import { Link } from 'react-router-dom';
+import { motorsItem, deleteMotorItem } from '../../redux/slice/motorSlice'; // Import the deleteMotorItem action
+import NavigationPanel from '../navigation/NavigationPanel';
+import MobileNavbar from '../navigation/MobileNavbar';
+import './DeleteMotor.scss';
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const DeleteMotor = () => {
   const dispatch = useDispatch();
@@ -22,10 +20,8 @@ const DeleteMotor = () => {
     dispatch(motorsItem());
   }, [dispatch]);
 
-  // Function to handle the deletion of a motor item
-  const handleDelete = (motor_id) => {
-    // Dispatch the deleteMotorItem action with the motorId
-    dispatch(deleteMotorItem(motor_id));
+  const handleDelete = (motorId) => {
+    dispatch(deleteMotorItem(motorId));
   };
 
   return (
@@ -56,7 +52,9 @@ const DeleteMotor = () => {
                 />
                 <Link to={`/MotorDetails/${item.id}`}>
                   <h4>
-                    <span>{item.brand_name}</span> <span>{item.model_no}</span>
+                    <span>{item.brand_name}</span>
+                    {' '}
+                    <span>{item.model_no}</span>
                   </h4>
                 </Link>
                 <div className="social-links">
@@ -65,6 +63,7 @@ const DeleteMotor = () => {
                   <i className="fa-brands fa-instagram" />
                 </div>
                 <button
+                  type="submit"
                   className="btn btn-outline-danger"
                   onClick={() => handleDelete(item.id)} // Call handleDelete with motor ID
                 >
