@@ -8,8 +8,6 @@ import './AddMotor.scss';
 
 const AddMotor = () => {
   const dispatch = useDispatch();
-
-  // Define initial state for locationData and motorData
   const initialLocationData = {
     city_name: '',
   };
@@ -27,8 +25,6 @@ const AddMotor = () => {
     finance_fee: '',
     total_price: '',
   };
-
-  // Initialize state with initial values
   const [locationData, setLocationData] = useState(initialLocationData);
   const [motorData, setMotorData] = useState(initialMotorData);
 
@@ -67,8 +63,6 @@ const AddMotor = () => {
     };
     dispatch(createLocation(combinedData.stores_location));
     dispatch(createMotor(combinedData.motor));
-
-    // Reset the input fields to their initial values
     setLocationData(initialLocationData);
     setMotorData(initialMotorData);
   };
@@ -203,7 +197,7 @@ const AddMotor = () => {
                 onChange={handleMotorChange}
               />
             </div>
-            <button type="submit" className="btn btn-outline-success">
+            <button type="submit" className="btn btn-outline-warning">
               Submit
             </button>
           </form>
