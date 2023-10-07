@@ -44,11 +44,6 @@ const DeleteMotor = () => {
                     <span>{item.model_no}</span>
                   </h4>
                 </Link>
-                <div className="social-links">
-                  <i className="fa-brands fa-facebook-f" />
-                  <i className="fa-brands fa-twitter" />
-                  <i className="fa-brands fa-instagram" />
-                </div>
                 <button
                   type="submit"
                   className="btn btn-outline-danger"
