@@ -26,7 +26,7 @@ const DeleteMotor = () => {
       <div className="motor-container">
         <div className="models-titles">
           <h1>Latest models</h1>
-          <h5>Please select a model</h5>
+          <h5>Delete a model</h5>
         </div>
         <div className="swiper-cont">
           <div className="grid-container">
