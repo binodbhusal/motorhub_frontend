@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { createReservation, fetchReservations } from './fetchdata';
 
 const initialState = {
-  reserves: [], // Initialize as an empty object
+  reserves: [],
   isLoading: false,
   isError: null,
 };

@@ -14,7 +14,7 @@ const Reservation = () => {
   const [formData, setFormData] = useState({
     reserve_date: '',
     city_name: '',
-    brand_name: motorDetail?.brand_name || '', // Autofill brand_name if motorDetail has data
+    brand_name: motorDetail?.brand_name || '',
   });
   const [selectMotorMessage, setSelectMotorMessage] = useState('');
 
@@ -35,18 +35,17 @@ const Reservation = () => {
 
     const reservationData = {
       user_id: userId ? parseInt(userId, 10) : null, // Convert to integer or null
-      motor_id: motorDetail.id, // Use the correct motor ID
+      motor_id: motorDetail.id,
       reserve_date: formData.reserve_date,
       city_name: formData.city_name,
     };
 
     dispatch(createReservation({ reserveData: reservationData, userId }))
       .then(() => {
-        navigate('/reserveconfirm'); // Redirect to a confirmation page
+        navigate('/reserveconfirm');
       })
       .catch((error) => {
-        // Handle error, display an error message, or show validation errors
-        console.error('Reservation error:', error);
+        document.write('Reservation error:', error);
       });
   };
 
@@ -62,13 +61,11 @@ const Reservation = () => {
             Brand Name:
             {' '}
             {motorDetail.brand_name}
-            {/* Display other motor details here */}
           </p>
           <p>
             Model No:
             {' '}
             {motorDetail.model_no}
-            {/* Display other motor details here */}
           </p>
         </div>
       )}
