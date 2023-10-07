@@ -1,16 +1,11 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation } from 'swiper/modules';
+import { SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 import { motorsItem, deleteMotorItem } from '../../redux/slice/motorSlice'; // Import the deleteMotorItem action
 import NavigationPanel from '../navigation/NavigationPanel';
 import MobileNavbar from '../navigation/MobileNavbar';
 import './DeleteMotor.scss';
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 const DeleteMotor = () => {
   const dispatch = useDispatch();
@@ -34,15 +29,7 @@ const DeleteMotor = () => {
           <h5>Please select a model</h5>
         </div>
         <div className="swiper-cont">
-          <Swiper
-            navigation
-            modules={[Navigation, Pagination]}
-            className="mySwiper"
-            loopFillGroupWithBlank
-            slidesPerView={3}
-            spaceBetween={20}
-            slidesPerGroup={1}
-          >
+          <div className="grid-container">
             {motorData.map((item) => (
               <SwiperSlide key={item.id}>
                 <img
@@ -71,7 +58,7 @@ const DeleteMotor = () => {
                 </button>
               </SwiperSlide>
             ))}
-          </Swiper>
+          </div>
         </div>
       </div>
     </div>
