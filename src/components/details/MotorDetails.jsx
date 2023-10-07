@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
 import { fetchMotoDetailData } from '../../redux/slice/motorDetailSlice';
 import NavigationPanel from '../navigation/NavigationPanel';
 import MobileNavbar from '../navigation/MobileNavbar';
@@ -10,7 +10,9 @@ const MotorDetails = () => {
   const dispatch = useDispatch();
   const { motorDetail } = useSelector((state) => state.motorDetails);
   const { id } = useParams();
-
+  const { search } = useLocation();
+  const queryParams = new URLSearchParams(search);
+  const userId = queryParams.get('user_id');
   useEffect(() => {
     dispatch(fetchMotoDetailData(id));
   }, [dispatch, id]);
@@ -57,10 +59,12 @@ const MotorDetails = () => {
             </p>
           </div>
 
-          <button className="reserve-btn" type="button">
-            <i className="fa-sharp fa-solid fa-gear" />
-            <span>Reserve</span>
-          </button>
+          <Link to={`/reserveform/${motorDetail.id}?user_id=${userId}`}>
+            <button className="reserve-btn" type="button">
+              <i className="fa-sharp fa-solid fa-gear" />
+              <span>Reserve</span>
+            </button>
+          </Link>
         </div>
       </div>
     </div>
