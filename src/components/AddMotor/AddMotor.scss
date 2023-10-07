@@ -20,9 +20,9 @@
     align-items: center;
     justify-content: center;
     top: 0;
-    background-color: var(--secondary-color);
+    background-color: rgb(130, 199, 19);
     left: 20%;
-    opacity: 0.9;
+    opacity: 0.99;
 
     @media screen and (max-width: 850px) {
       top: 5rem;
@@ -137,6 +137,6 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    opacity: 0.1;
+    opacity: 0.2;
   }
 }
