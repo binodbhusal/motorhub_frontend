@@ -6,7 +6,6 @@ user2 = User.create(name: 'User 2', role:'admin')
 location1 = StoreLocation.create(city_name: 'Lisbon')
 location2 = StoreLocation.create(city_name: 'Kathmandu')
 
-
 # Seed data for Motor table
 motor1 = Motor.create(
   user_id: user1.id,
