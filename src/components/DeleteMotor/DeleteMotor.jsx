@@ -28,10 +28,10 @@ const DeleteMotor = () => {
           <h1>Latest models</h1>
           <h5>Delete a model</h5>
         </div>
-        <div className="swiper-cont">
-          <div className="grid-container">
+        <div className="delete-motors-cont">
+          <div className="delete-motors-grid-cont">
             {motorData.map((item) => (
-              <SwiperSlide key={item.id}>
+              <div key={item.id}>
                 <img
                   src={item.photo}
                   alt={item.brand_name}
@@ -44,11 +44,6 @@ const DeleteMotor = () => {
                     <span>{item.model_no}</span>
                   </h4>
                 </Link>
-                <div className="social-links">
-                  <i className="fa-brands fa-facebook-f" />
-                  <i className="fa-brands fa-twitter" />
-                  <i className="fa-brands fa-instagram" />
-                </div>
                 <button
                   type="submit"
                   className="btn btn-outline-danger"
@@ -56,7 +51,7 @@ const DeleteMotor = () => {
                 >
                   Delete Motor
                 </button>
-              </SwiperSlide>
+              </div>
             ))}
           </div>
         </div>
