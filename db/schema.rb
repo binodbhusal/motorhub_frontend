@@ -58,7 +58,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_29_141806) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["id"], name: "index_users_on_id"
-    t.index ["name"], name: "index_users_on_name"
+    t.index ["name"], name: "index_users_on_name", unique: true
     t.index ["role"], name: "index_users_on_role"
   end
 
