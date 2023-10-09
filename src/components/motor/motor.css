@@ -69,3 +69,18 @@
   font-size: 16px;
   font-style: italic;
 }
+
+/* -------------- TABLET VERSION ----------------*/
+@media (max-width: 770px) {
+  .motor-container {
+    width: 90%;
+    margin-top: 15%;
+    margin: 15% 5% 2% 5%;
+  }
+
+  /* swipper */
+  .swiper-cont .swiper-button-prev,
+  .swiper-cont .swiper-button-next {
+    display: none;
+  }
+}
