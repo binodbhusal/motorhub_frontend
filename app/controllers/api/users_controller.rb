@@ -29,6 +29,10 @@ class Api::UsersController < ApplicationController
     @user.destroy
   end
 
+  def log_in; end
+
+  def sign_up; end
+
   private
 
   def set_user
