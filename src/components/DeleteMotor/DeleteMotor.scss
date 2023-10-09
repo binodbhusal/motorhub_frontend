@@ -12,10 +12,14 @@
   .motor-container {
     position: absolute;
   }
+}
 
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 15px;
-  }
+.delete-motors-cont {
+  padding: 0 10%;
+}
+
+.delete-motors-grid-cont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
 }
