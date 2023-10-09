@@ -1,0 +1,47 @@
+.lifestyle-container.reserve-details {
+    margin-left: 20%;
+    height: 100vh;
+    background: url('https://img.freepik.com/premium-photo/front-view-generic-brandless-moder-car_110488-502.jpg?w=1060');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 999999;
+    /* background-color: transparent; */
+}
+
+.lifestyle-container.reserve-details .second-cont {
+    padding: 5% 25%;
+    background: #020216;
+    /* background: #fff; */
+    height: 100vh;
+    opacity: 0.8;
+    background-attachment: fixed;
+    /* opacity: 0.6; */
+}
+
+.list-reserved-title {
+    margin-bottom: 35px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.single-reservation-cont {
+    border: 3px solid var(--secondary-color);
+    background: #fff;
+    margin-bottom: 40px;
+    width: 400px;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+}
+
+.bold-reservaiton {
+    font-weight: bold;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.bold-reservaiton.brand-name {
+    color: #098319;
+    /* background: #0e2511; */
+}
