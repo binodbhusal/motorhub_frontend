@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const API_BASE_URL = 'http://localhost:3000/api/motors';
+export const API_BASE_URL = 'http://localhost:3000/api/motors';
 
 // Fetch motors data from the API
 export const fetchMotoData = createAsyncThunk(
