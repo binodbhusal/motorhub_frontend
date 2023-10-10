@@ -40,6 +40,10 @@
       justify-content: center;
       width: 65%;
 
+      @media screen and (max-width: 480px) {
+        width: 90%;
+      }
+
       .submit-form {
         display: flex;
         flex-direction: column;
@@ -51,6 +55,11 @@
           @media screen and (max-width: 850px) {
             flex-direction: column;
             padding-top: 10%;
+          }
+
+          @media screen and (max-width: 480px) {
+            flex-direction: column;
+            padding-top: 18%;
           }
 
           .location-input {
