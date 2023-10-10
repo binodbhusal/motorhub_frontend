@@ -62,3 +62,15 @@
         padding: 20px 50px;
     }
 }
+
+/* -------------- PHONE VERSION ----------------*/
+@media (max-width: 480px){
+    .lifestyle-container.reserve-details .second-cont {
+        padding: 5%;
+    }
+
+    .single-reservation-cont {
+        width: 100%;
+        padding: 15px;
+    }
+}
