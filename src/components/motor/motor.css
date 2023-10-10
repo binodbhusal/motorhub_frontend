@@ -74,7 +74,6 @@
 @media (max-width: 770px) {
   .motor-container {
     width: 90%;
-    margin-top: 15%;
     margin: 15% 5% 2% 5%;
   }
 
@@ -82,5 +81,13 @@
   .swiper-cont .swiper-button-prev,
   .swiper-cont .swiper-button-next {
     display: none;
+  }
+}
+
+/* -------------- TABLET VERSION ----------------*/
+@media (max-width: 770px) {
+  .motor-container {
+    width: 90%;
+    margin: 23% 5% 2% 5%;
   }
 }
