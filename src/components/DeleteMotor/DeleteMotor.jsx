@@ -35,7 +35,7 @@ const DeleteMotor = () => {
                 <img
                   src={item.photo}
                   alt={item.brand_name}
-                  className="img-img"
+                  className="imgage-image"
                 />
                 <Link to={`/MotorDetails/${item.id}`}>
                   <h4>

@@ -16,10 +16,21 @@
 
 .delete-motors-cont {
   padding: 0 10%;
+  @media (max-width: 770px){
+    padding: 10% 5%;
+  }
 }
 
 .delete-motors-grid-cont {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
+  @media (max-width: 770px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
+
+.imgage-image {
+  width: 100%;
+}
+
