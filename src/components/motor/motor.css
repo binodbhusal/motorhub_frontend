@@ -88,6 +88,13 @@
 @media (max-width: 850px) {
   .motor-container {
     width: 90%;
-    margin: 23% 5% 2% 5%;
+    margin: 15% 5% 2% 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .motor-container {
+    width: 90%;
+    margin: 25% 5% 2% 5%;
   }
 }
