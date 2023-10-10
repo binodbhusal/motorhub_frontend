@@ -70,7 +70,7 @@
   font-style: italic;
 }
 
-/* -------------- TABLET VERSION ----------------*/
+/* -------------- TABLET VERSION ---------------- */
 @media (max-width: 850px) {
   .motor-container {
     width: 90%;
@@ -84,7 +84,7 @@
   }
 }
 
-/* -------------- TABLET VERSION ----------------*/
+/* -------------- TABLET VERSION ---------------- */
 @media (max-width: 850px) {
   .motor-container {
     width: 90%;

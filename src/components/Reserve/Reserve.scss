@@ -3,7 +3,7 @@
   background: #fff;
   padding: 50px;
   border-radius: 50px;
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
 .motor-reserved h2 {
@@ -19,7 +19,8 @@
   padding: 6px 20px;
 }
 
-.select-city-btn, .reserve-motor-btn {
+.select-city-btn,
+.reserve-motor-btn {
   border: none;
   background: var(--secondary-color);
   padding: 8px 20px;
@@ -31,7 +32,7 @@
   color: #fff;
 }
 
-/* -------------- PHONE VERSION ----------------*/
+/* -------------- PHONE VERSION ---------------- */
 @media (max-width: 480px) {
   .reserve-motor-cont {
     padding: 20px;
