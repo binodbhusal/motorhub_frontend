@@ -41,7 +41,7 @@ const SignUp = () => {
               <option className="signup__select--option" value="admin">Admin</option>
             </select>
           </div>
-          <button className="signup__form--btn" onClick={signUpFormSumitHandler}>sign up</button>
+          <button className="signup__form--btn" onClick={signUpFormSumitHandler} type='submit'>sign up</button>
           <p className="signup__form--text">Already have an account?</p>
           <a href="/log_in" className="signup__form--link">login</a>
         </form>
