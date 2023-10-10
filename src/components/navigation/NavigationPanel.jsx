@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavigationPanel.scss';
-import logo from '../../assets/logo.png';
 import { useDispatch } from 'react-redux';
+import logo from '../../assets/logo.png';
 import { logOut } from '../../redux/slice/userSlice';
 
 const links = [
@@ -14,12 +14,12 @@ const links = [
 ];
 
 const NavigationPanel = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const logOutHandler = () => {
-    dispatch(logOut())
-  }
+    dispatch(logOut());
+  };
 
-  return(
+  return (
     <div className="navigation-container">
       <div className="logo-container">
         <img src={logo} alt="Logo" className="motor-logo" />
@@ -58,6 +58,7 @@ const NavigationPanel = () => {
         </a>
       </div>
     </div>
-)};
+  );
+};
 
 export default NavigationPanel;

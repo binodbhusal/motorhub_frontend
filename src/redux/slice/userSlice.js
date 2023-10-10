@@ -1,9 +1,9 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-const SESSION_URL = "http://localhost:3000/api/sessions/";
+const SESSION_URL = 'http://localhost:3000/api/sessions/';
 
-export const logIn = createAsyncThunk("user/logIn", async (payload) => {
+export const logIn = createAsyncThunk('user/logIn', async (payload) => {
   try {
     console.log(payload);
     const response = await axios.post(`${SESSION_URL}new`, payload);
@@ -16,7 +16,7 @@ export const logIn = createAsyncThunk("user/logIn", async (payload) => {
   }
 });
 
-export const signUp = createAsyncThunk("user/signUp", async (payload) => {
+export const signUp = createAsyncThunk('user/signUp', async (payload) => {
   try {
     const response = await axios.post(`${SESSION_URL}create`, payload);
     if (!response) throw new Error("Couldn't sign up the user!");
@@ -29,21 +29,21 @@ export const signUp = createAsyncThunk("user/signUp", async (payload) => {
   }
 });
 
-const user = JSON.parse(localStorage.getItem("user"));
+const user = JSON.parse(localStorage.getItem('user'));
 
 const initialState = user || {
   user: {},
   logedIn: false,
   loading: false,
-  error: "",
+  error: '',
 };
 
 const userSlice = createSlice({
-  name: "user",
+  name: 'user',
   initialState,
   reducers: {
     logOut: () => {
-      localStorage.removeItem("user");
+      localStorage.removeItem('user');
       return {
         user: {},
         logedIn: false,
@@ -63,7 +63,7 @@ const userSlice = createSlice({
         logedIn: true,
         user: payload,
       };
-      localStorage.setItem("user", JSON.stringify(newState));
+      localStorage.setItem('user', JSON.stringify(newState));
       return newState;
     });
 
@@ -83,7 +83,7 @@ const userSlice = createSlice({
         logedIn: true,
         user: payload,
       };
-      localStorage.setItem("user", JSON.stringify(newState));
+      localStorage.setItem('user', JSON.stringify(newState));
       return newState;
     });
 
