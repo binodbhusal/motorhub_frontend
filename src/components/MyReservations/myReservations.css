@@ -5,7 +5,7 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    z-index: 999999;
+    /* z-index: 999999; */
     /* background-color: transparent; */
 }
 
@@ -44,4 +44,21 @@
 .bold-reservaiton.brand-name {
     color: #098319;
     /* background: #0e2511; */
+}
+
+/* -------------- TABLET VERSION ----------------*/
+@media (max-width: 770px){
+    .lifestyle-container.reserve-details {
+        margin-left: 0;
+        background-position: top right;
+    }
+
+    .lifestyle-container.reserve-details .second-cont {
+        padding: 5% 10%;
+    }
+
+    .single-reservation-cont {
+        width: 100%;
+        padding: 20px 50px;
+    }
 }
