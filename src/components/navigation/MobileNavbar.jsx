@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './MobileNabar.scss';
 import { NavLink } from 'react-router-dom';
 import logo from '../../assets/logo.png';
+import { useDispatch } from 'react-redux';
+import { logOut } from '../../redux/slice/userSlice';
 
 const links = [
   { path: '/', text: 'Motors' },
@@ -9,12 +11,15 @@ const links = [
   { path: '/MyReservations', text: 'MyReservations' },
   { path: '/AddMotor', text: 'AddMotor' },
   { path: '/DeleteMotor', text: 'DeleteMotor' },
-  { path: '/log-out', text: 'LOG-OUT' },
 ];
 
 const MobileNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [displayNavbar, setDisplayNavbar] = useState(false);
+  const dispatch = useDispatch()
+  const logOutHandler = () => {
+    dispatch(logOut())
+  }
 
   const handleToggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -41,6 +46,12 @@ const MobileNavbar = () => {
               </NavLink>
             </li>
           ))}
+
+        <li className="nav-link">
+          <a className="navlink-class nav-button" onClick={logOutHandler}>
+            <p className="nav-item">LOG-OUT</p>
+          </a>
+          </li>
         </ul>
 
         <div className="social-media-container">
