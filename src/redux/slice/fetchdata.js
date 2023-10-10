@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const API_BASE_URL = 'http://localhost:3000/api/motors';
 
@@ -33,3 +34,22 @@ export const createMotor = createAsyncThunk(
     return data;
   },
 );
+export const createReservation = createAsyncThunk('reserve',
+  async ({ reserveData, userId }, { rejectWithValue }) => {
+    try {
+      const response = await axios.post(`http://localhost:3000/api/users/${userId}/reservations`, reserveData);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  });
+
+export const fetchReservations = createAsyncThunk('reservations',
+  async (userId) => {
+    try {
+      const response = await axios.get(`http://localhost:3000/api/users/${userId}/reservations`);
+      return response.data;
+    } catch (error) {
+      throw error.message;
+    }
+  });
