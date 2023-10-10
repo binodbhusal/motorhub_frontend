@@ -35,7 +35,7 @@ const Motor = () => {
           spaceBetween={20}
           slidesPerGroup={1}
           breakpoints={{
-            770:{
+            850:{
               slidesPerView: 3
             },
             480:{
