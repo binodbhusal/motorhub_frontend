@@ -5,7 +5,6 @@ const SESSION_URL = 'http://localhost:3000/api/sessions/';
 
 export const logIn = createAsyncThunk('user/logIn', async (payload) => {
   try {
-    console.log(payload);
     const response = await axios.post(`${SESSION_URL}new`, payload);
     if (!response) throw new Error("Couldn't get user!");
     const { data } = response;
@@ -21,7 +20,6 @@ export const signUp = createAsyncThunk('user/signUp', async (payload) => {
     const response = await axios.post(`${SESSION_URL}create`, payload);
     if (!response) throw new Error("Couldn't sign up the user!");
     const { data } = response;
-    console.log(data.user);
     if (!data) throw new Error(response.error);
     return data.user;
   } catch (error) {
