@@ -1,13 +1,13 @@
 class Api::StoresLocationController < ApplicationController
   # GET /api/stores_location
   def index
-    @locations = Location.all
+    @locations = StoreLocation.all
     render json: @locations
   end
 
   # GET /api/stores_location/:id
   def show
-    @location = Location.find_by(id: params[:id])
+    @location = StoreLocation.find_by(id: params[:id])
     if @location
       render json: @location
     else
@@ -17,7 +17,7 @@ class Api::StoresLocationController < ApplicationController
 
   # POST /api/stores_location
   def create
-    @location = Location.new(location_params)
+    @location = StoreLocation.new(location_params)
 
     if @location.save
       render json: @location, status: :created
@@ -28,7 +28,7 @@ class Api::StoresLocationController < ApplicationController
 
   # PUT /api/stores_location/:id
   def update
-    @location = Location.find_by(id: params[:id])
+    @location = StoreLocation.find_by(id: params[:id])
     if @location
       if @location.update(location_params)
         render json: @location
@@ -42,7 +42,7 @@ class Api::StoresLocationController < ApplicationController
 
   # DELETE /api/stores_location/:id
   def destroy
-    @location = Location.find_by(id: params[:id])
+    @location = StoreLocation.find_by(id: params[:id])
     if @location
       @location.destroy
       head :no_content
@@ -54,6 +54,6 @@ class Api::StoresLocationController < ApplicationController
   private
 
   def location_params
-    params.require(:location).permit(:city_name)
+    params.require(:stores_location).permit(:city_name)
   end
 end
