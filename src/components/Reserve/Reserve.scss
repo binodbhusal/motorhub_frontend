@@ -30,3 +30,11 @@
 .reserved-messages {
   color: #fff;
 }
+
+/* -------------- PHONE VERSION ----------------*/
+@media (max-width: 480px) {
+  .reserve-motor-cont {
+    padding: 20px;
+    border-radius: 20px;
+  }
+}

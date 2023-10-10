@@ -73,4 +73,12 @@
         width: 100%;
         padding: 15px;
     }
+
+    .single-reservation-cont {
+        border: 2px solid var(--secondary-color);
+        margin-bottom: 40px;
+        width: 100%;
+        padding: 20px;
+        border-radius: 20px;
+    }
 }
