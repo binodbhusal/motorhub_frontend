@@ -30,7 +30,7 @@ const MyReservations = () => {
             <h1 className="list-reserved-title">Reserved List:</h1>
             <ul>
               {reserves.map((myreserve) => (
-                <div className="single-reservation-cont">
+                <div key={myreserve.id} className="single-reservation-cont">
                   <li key={myreserve.id}>
                     <p>
                       <span>CityName:</span>

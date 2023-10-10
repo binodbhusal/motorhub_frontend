@@ -13,9 +13,9 @@ const ReserveConfirm = () => (
       <div className="second-cont">
         <div className="reserved-messages">
           <p>
-            Your selected motor has been reserved. Please visit our store location for further process.
+            Your selected motor has been reserved.
+            Please visit our store location for further process.
             Thank you for the reservation.
-
           </p>
           <h5>
             Please click

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 import { motorsItem, deleteMotorItem } from '../../redux/slice/motorSlice'; // Import the deleteMotorItem action
 import NavigationPanel from '../navigation/NavigationPanel';
