@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchReservations } from '../../redux/slice/fetchdata';
+import { fetchReservations, deleteRreservation } from '../../redux/slice/fetchdata';
 import MobileNavbar from '../navigation/MobileNavbar';
 import NavigationPanel from '../navigation/NavigationPanel';
 import './myReservations.css';
@@ -8,11 +8,11 @@ import './myReservations.css';
 const MyReservations = () => {
   const dispatch = useDispatch();
   const userId = 2; // Replace with the actual user ID you want to fetch reservations for
+  const { reserves, isLoading, isError } = useSelector((state) => state.reserve);
 
   useEffect(() => {
     dispatch(fetchReservations(userId));
   }, [dispatch, userId]);
-  const { reserves, isLoading, isError } = useSelector((state) => state.reserve);
 
   let reserveList;
   if (isLoading) {

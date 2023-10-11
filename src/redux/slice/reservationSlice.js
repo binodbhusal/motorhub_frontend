@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { createReservation, fetchReservations } from './fetchdata';
+import { createReservation, fetchReservations, deleteRreservation } from './fetchdata';
 
 const initialState = {
   reserves: [],
