@@ -1,9 +1,9 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import NavigationPanel from "../navigation/NavigationPanel";
-import MobileNavbar from "../navigation/MobileNavbar";
-import Motor from "../motor/Motor";
-import "./mainpage.scss";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import NavigationPanel from '../navigation/NavigationPanel';
+import MobileNavbar from '../navigation/MobileNavbar';
+import Motor from '../motor/Motor';
+import './mainpage.scss';
 
 const MainPage = () => (
   <div className="mainpage-container">

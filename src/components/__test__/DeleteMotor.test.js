@@ -1,33 +1,33 @@
-jest.mock("swiper/react", () => ({
+import { BrowserRouter as Router } from 'react-router-dom';
+import React from 'react';
+import {
+  render, fireEvent, waitFor, screen,
+} from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import motorReducer from '../../redux/slice/motorSlice';
+import DeleteMotor from '../DeleteMotor/DeleteMotor';
+
+jest.mock('swiper/react', () => ({
+  // eslint-disable-next-line react/prop-types
   SwiperSlide: ({ children }) => <div>{children}</div>,
 }));
-
-import { BrowserRouter as Router } from "react-router-dom";
-import React from "react";
-import { render, fireEvent, waitFor, screen } from "@testing-library/react";
-import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-import motorReducer from "../../redux/slice/motorSlice";
-import DeleteMotor from "../DeleteMotor/DeleteMotor";
-
-const store = createStore(motorReducer, applyMiddleware(thunk));
-
-test("DeleteMotor component deletes a motor item", async () => {
+test('DeleteMotor component deletes a motor item', async () => {
   const initialState = {
     motor: {
       motorData: [
         {
           id: 1,
-          brand_name: "Test Brand 1",
-          model_no: "Model 1",
-          photo: "photo1.jpg",
+          brand_name: 'Test Brand 1',
+          model_no: 'Model 1',
+          photo: 'photo1.jpg',
         },
         {
           id: 2,
-          brand_name: "Test Brand 2",
-          model_no: "Model 2",
-          photo: "photo2.jpg",
+          brand_name: 'Test Brand 2',
+          model_no: 'Model 2',
+          photo: 'photo2.jpg',
         },
       ],
       loading: false,
@@ -39,7 +39,7 @@ test("DeleteMotor component deletes a motor item", async () => {
   const storeWithInitialState = createStore(
     motorReducer,
     initialState,
-    applyMiddleware(thunk)
+    applyMiddleware(thunk),
   );
 
   render(
@@ -47,7 +47,7 @@ test("DeleteMotor component deletes a motor item", async () => {
       <Router>
         <DeleteMotor />
       </Router>
-    </Provider>
+    </Provider>,
   );
 
   const testMotorIdToDelete = 1; // Replace with a valid motor ID from your test data
@@ -58,7 +58,7 @@ test("DeleteMotor component deletes a motor item", async () => {
 
   await waitFor(() => {
     expect(storeWithInitialState.getState().motor.motorData).not.toContain(
-      (motor) => motor.id === testMotorIdToDelete
+      (motor) => motor.id === testMotorIdToDelete,
     );
   });
 });

@@ -1,30 +1,29 @@
-import React from "react";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { createLocation } from "../../redux/slice/locationSlice";
-import { createMotor } from "../../redux/slice/fetchdata";
-import MobileNavbar from "../navigation/MobileNavbar";
-import NavigationPanel from "../navigation/NavigationPanel";
-import "./AddMotor.scss";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { createLocation } from '../../redux/slice/locationSlice';
+import { createMotor } from '../../redux/slice/fetchdata';
+import MobileNavbar from '../navigation/MobileNavbar';
+import NavigationPanel from '../navigation/NavigationPanel';
+import './AddMotor.scss';
 
 const AddMotor = () => {
   const dispatch = useDispatch();
   const initialLocationData = {
-    city_name: "",
+    city_name: '',
   };
 
   const initialMotorData = {
     location_id: initialLocationData.id,
-    brand_name: "",
-    model_no: "",
-    manufacturer: "",
-    manufacture_date: "",
-    description: "",
-    photo: "",
-    unit_price: "",
-    purchase_fee: "",
-    finance_fee: "",
-    total_price: "",
+    brand_name: '',
+    model_no: '',
+    manufacturer: '',
+    manufacture_date: '',
+    description: '',
+    photo: '',
+    unit_price: '',
+    purchase_fee: '',
+    finance_fee: '',
+    total_price: '',
   };
   const [locationData, setLocationData] = useState(initialLocationData);
   const [motorData, setMotorData] = useState(initialMotorData);

@@ -1,7 +1,7 @@
-import { configureStore } from "@reduxjs/toolkit";
-import addMotorSlice from "../../redux/slice/addMotorSlice"; // Replace 'yourSlice' with the correct path to your slice file
+import { configureStore } from '@reduxjs/toolkit';
+import addMotorSlice from '../../redux/slice/addMotorSlice'; // Replace 'yourSlice' with the correct path to your slice file
 
-describe("addMotorSlice", () => {
+describe('addMotorSlice', () => {
   let store;
 
   beforeEach(() => {
@@ -12,7 +12,7 @@ describe("addMotorSlice", () => {
     });
   });
 
-  it("should have the correct initial state", () => {
+  it('should have the correct initial state', () => {
     const initialState = store.getState().motor;
     expect(initialState).toEqual({
       motors: [],
@@ -21,10 +21,10 @@ describe("addMotorSlice", () => {
     });
   });
 
-  it("should handle fetchMotoData.fulfilled action", () => {
-    const fakeMotorData = [{ id: 1, name: "Motor 1" }];
+  it('should handle fetchMotoData.fulfilled action', () => {
+    const fakeMotorData = [{ id: 1, name: 'Motor 1' }];
     const action = {
-      type: "motor/fetchMotoData/fulfilled",
+      type: 'motor/fetchMotoData/fulfilled',
       payload: fakeMotorData,
     };
 

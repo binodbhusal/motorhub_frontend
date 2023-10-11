@@ -3,34 +3,34 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: ["node_modules"],
-        use: ["babel-loader"],
+        exclude: ['node_modules'],
+        use: ['babel-loader'],
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.gif$/,
-        type: "asset/inline",
+        type: 'asset/inline',
       },
       {
         test: /\.(ttf|eot|svg)$/,
-        type: "asset/resource",
+        type: 'asset/resource',
       },
     ],
   },
   resolve: {
     alias: {
-      config$: "./configs/app-config.js",
-      react: "./vendor/react-master",
+      config$: './configs/app-config.js',
+      react: './vendor/react-master',
     },
-    extensions: [".js", ".jsx"],
+    extensions: ['.js', '.jsx'],
     modules: [
-      "node_modules",
-      "bower_components",
-      "shared",
-      "/shared/vendor/modules",
+      'node_modules',
+      'bower_components',
+      'shared',
+      '/shared/vendor/modules',
     ],
   },
 };
