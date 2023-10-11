@@ -11,26 +11,35 @@ const Login = () => {
   const user = useSelector((store) => store.user);
 
   const [name, setName] = useState('');
+  const [errorMessage, setErrorMessage] = useState(user.error);
 
   const nameInputChangeHandler = (e) => {
     setName(e.target.value);
   };
 
   const loginHandler = (e) => {
+    if (name === '') {
+      setErrorMessage('name must not be blank');
+      return;
+    }
     e.preventDefault();
     dispatch(logIn({ name }));
   };
+
   useEffect(() => {
     if (!user.logedIn) return;
     navigate('/');
   }, [user.logedIn, navigate]);
+
+  useEffect(() => setErrorMessage(user.error), [user.error, setErrorMessage]);
 
   return (
     <div className="login__page--container">
       <div className="login__page--shadow">
         <form className="login__form">
           <h2 className="login__page--title">log in</h2>
-          <input type="text" className="login__form--input" onChange={nameInputChangeHandler} />
+          <input type="text" className="login__form--input" onChange={nameInputChangeHandler} required placeholder="name" />
+          <p className="login__error">{errorMessage}</p>
           <button className="login__form--btn" type="submit" onClick={loginHandler}>Login</button>
           <p className="signup__form--text">Don&apos;t have an account?</p>
           <a href="/sign_up" className="login__form--link">sign up</a>

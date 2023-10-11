@@ -54,6 +54,7 @@ const userSlice = createSlice({
     builder.addCase(logIn.pending, (state) => ({ ...state, loading: true }));
 
     builder.addCase(logIn.fulfilled, (state, { payload }) => {
+      if (payload.response?.status === 422) return { ...state, error: payload.response.data.error };
       const newState = {
         ...state,
         loading: false,
@@ -74,6 +75,7 @@ const userSlice = createSlice({
     builder.addCase(signUp.pending, (state) => ({ ...state, loading: true }));
 
     builder.addCase(signUp.fulfilled, (state, { payload }) => {
+      if (payload.response?.status === 422) return { ...state, error: payload.response.data.error };
       const newState = {
         ...state,
         loading: false,

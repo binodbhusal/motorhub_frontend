@@ -50,6 +50,10 @@
   color: white;
   width: 20rem;
   padding-left: 2rem;
+
+  ::placeholder {
+    color: #c6c6c6;
+  }
 }
 
 .login__form--btn {
@@ -58,4 +62,8 @@
   width: 10rem;
   border: none;
   border-radius: 0.2rem;
+}
+
+.login__error {
+  color: red;
 }
