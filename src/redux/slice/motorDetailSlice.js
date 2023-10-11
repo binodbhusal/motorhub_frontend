@@ -28,7 +28,7 @@ const motorDetailSlice = createSlice({
       }))
       .addCase(fetchMotoDetailData.fulfilled, (state, action) => ({
         ...state,
-        loading: false, // Update loading to false
+        loading: false,
         motorDetail: action.payload,
       }))
       .addCase(fetchMotoDetailData.rejected, (state) => ({
