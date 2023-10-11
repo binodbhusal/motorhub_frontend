@@ -18,11 +18,11 @@ class Api::SessionsController < ApplicationController
   def login
     request_body = JSON.parse(request.body.read)
     user_name = request_body['name']
-    @user = User.where(name: user_name)
-    if @user.exists?
-      render json: { message: 'User logged in successfully!', user: @user }, status: :ok
-    else
+    @user = User.find_by(name: user_name)
+    if @user.nil?
       render json: { error: 'invalid user name!' }, status: :unprocessable_entity
+    else
+      render json: { message: 'User logged in successfully!', user: @user }, status: :ok
     end
   end
 end
