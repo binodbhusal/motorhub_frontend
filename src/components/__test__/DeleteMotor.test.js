@@ -1,78 +1,64 @@
-import React from "react";
-import { render, fireEvent } from "@testing-library/react";
-import { Provider } from "react-redux";
-import configureStore from "redux-mock-store";
+jest.mock("swiper/react", () => ({
+  SwiperSlide: ({ children }) => <div>{children}</div>,
+}));
+
 import { BrowserRouter as Router } from "react-router-dom";
+import React from "react";
+import { render, fireEvent, waitFor, screen } from "@testing-library/react";
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import motorReducer from "../../redux/slice/motorSlice";
 import DeleteMotor from "../DeleteMotor/DeleteMotor";
 
-const mockStore = configureStore({
-  motor: {
-    motorData: [
-      {
-        id: 1,
-        brand_name: "Brand1",
-        model_no: "Model1",
-        photo: "photo1.jpg",
-      },
-      {
-        id: 2,
-        brand_name: "Brand2",
-        model_no: "Model2",
-        photo: "photo2.jpg",
-      },
-    ],
-  },
-});
+const store = createStore(motorReducer, applyMiddleware(thunk));
 
-describe("DeleteMotor Component", () => {
-  let store;
+test("DeleteMotor component deletes a motor item", async () => {
+  const initialState = {
+    motor: {
+      motorData: [
+        {
+          id: 1,
+          brand_name: "Test Brand 1",
+          model_no: "Model 1",
+          photo: "photo1.jpg",
+        },
+        {
+          id: 2,
+          brand_name: "Test Brand 2",
+          model_no: "Model 2",
+          photo: "photo2.jpg",
+        },
+      ],
+      loading: false,
+      error: null,
+      motor_id: null,
+    },
+  };
 
-  beforeEach(() => {
-    store = mockStore({
-      motor: {
-        motorData: [
-          {
-            id: 1,
-            brand_name: "Brand1",
-            model_no: "Model1",
-            photo: "photo1.jpg",
-          },
-          {
-            id: 2,
-            brand_name: "Brand2",
-            model_no: "Model2",
-            photo: "photo2.jpg",
-          },
-        ],
-      },
-    });
-  });
+  const storeWithInitialState = createStore(
+    motorReducer,
+    initialState,
+    applyMiddleware(thunk)
+  );
 
-  it("should render the DeleteMotor component", () => {
-    const { getByTestId } = render(
-      <Provider store={store}>
-        <Router>
-          <DeleteMotor />
-        </Router>
-      </Provider>
+  render(
+    <Provider store={storeWithInitialState}>
+      <Router>
+        <DeleteMotor />
+      </Router>
+    </Provider>
+  );
+
+  const testMotorIdToDelete = 1; // Replace with a valid motor ID from your test data
+
+  const deleteButton = screen.getByTestId(`delete-${testMotorIdToDelete}`);
+
+  fireEvent.click(deleteButton);
+
+  await waitFor(() => {
+    expect(storeWithInitialState.getState().motor.motorData).not.toContain(
+      (motor) => motor.id === testMotorIdToDelete
     );
-
-    const deleteMotorComponent = getByTestId("deletemotor-1");
-    expect(deleteMotorComponent).toBeInTheDocument();
   });
-
-  it('should have a "Delete Motor" button', () => {
-    const { getByText } = render(
-      <Provider store={store}>
-        <Router>
-          <DeleteMotor />
-        </Router>
-      </Provider>
-    );
-
-    const deleteMotorButton = getByText("Delete Motor");
-    expect(deleteMotorButton).toBeInTheDocument();
-  });
-
-  // Add more test cases as needed
 });

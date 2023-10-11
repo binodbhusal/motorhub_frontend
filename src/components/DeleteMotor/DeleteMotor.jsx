@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { SwiperSlide } from 'swiper/react';
-import { Link } from 'react-router-dom';
-import { motorsItem, deleteMotorItem } from '../../redux/slice/motorSlice'; // Import the deleteMotorItem action
-import NavigationPanel from '../navigation/NavigationPanel';
-import MobileNavbar from '../navigation/MobileNavbar';
-import './DeleteMotor.scss';
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { SwiperSlide } from "swiper/react";
+import { Link } from "react-router-dom";
+import { motorsItem, deleteMotorItem } from "../../redux/slice/motorSlice"; // Import the deleteMotorItem action
+import NavigationPanel from "../navigation/NavigationPanel";
+import MobileNavbar from "../navigation/MobileNavbar";
+import "./DeleteMotor.scss";
 
 const DeleteMotor = () => {
   const dispatch = useDispatch();
@@ -39,17 +39,11 @@ const DeleteMotor = () => {
                 />
                 <Link to={`/MotorDetails/${item.id}`}>
                   <h4>
-                    <span>{item.brand_name}</span>
-                    {' '}
-                    <span>{item.model_no}</span>
+                    <span>{item.brand_name}</span> <span>{item.model_no}</span>
                   </h4>
                 </Link>
-                <div className="social-links">
-                  <i className="fa-brands fa-facebook-f" />
-                  <i className="fa-brands fa-twitter" />
-                  <i className="fa-brands fa-instagram" />
-                </div>
                 <button
+                  data-testid={`delete-${item.id}`}
                   type="submit"
                   className="btn btn-outline-danger"
                   onClick={() => handleDelete(item.id)} // Call handleDelete with motor ID

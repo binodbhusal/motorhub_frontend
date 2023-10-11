@@ -1,5 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { createReservation, fetchReservations } from './fetchdata';
+import { createSlice } from "@reduxjs/toolkit";
+
+import { createReservation, fetchReservations } from "./fetchdata";
 
 const initialState = {
   reserves: [],
@@ -8,7 +9,7 @@ const initialState = {
 };
 
 const reservationSlice = createSlice({
-  name: 'reserve',
+  name: "reserve",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -27,12 +28,12 @@ const reservationSlice = createSlice({
       .addCase(createReservation.rejected, (state) => ({
         ...state,
         isLoading: false,
-        isError: 'Error Creating Reservation',
+        isError: "Error Creating Reservation",
       }))
       .addCase(fetchReservations.pending, (state) => ({
         ...state,
         isLoading: true,
-        isError: 'Error Creating Reservation',
+        isError: "Error Creating Reservation",
       }))
       .addCase(fetchReservations.fulfilled, (state, action) => ({
         ...state,
@@ -43,7 +44,7 @@ const reservationSlice = createSlice({
       .addCase(fetchReservations.rejected, (state) => ({
         ...state,
         isLoading: false,
-        isError: 'Error Fetching Reservation',
+        isError: "Error Fetching Reservation",
       }));
   },
 });

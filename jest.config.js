@@ -8,7 +8,8 @@ module.exports = {
     "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
   },
   transform: {
-    "\\.(js|jsx)$": "babel-jest",
+    "^.+\\.jsx?$": "babel-jest",
     "\\.(scss|css)$": "jest-transform-stub",
   },
+  transformIgnorePatterns: ["/node_modules/"],
 };
