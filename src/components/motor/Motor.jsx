@@ -49,7 +49,9 @@ const Motor = () => {
 
           {motorData.map((item) => (
             <SwiperSlide>
-              <img src={item.photo} alt={item.brand_name} className="img-img" />
+              <div className="motor__img--container">
+                <img src={item.photo} alt={item.brand_name} className="img-img" />
+              </div>
               <Link to={`/MotorDetails/${item.id}`}>
                 <h4>
                   <span>{item.brand_name }</span>

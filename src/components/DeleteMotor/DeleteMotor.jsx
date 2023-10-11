@@ -30,7 +30,7 @@ const DeleteMotor = () => {
         <div className="delete-motors-cont">
           <div className="delete-motors-grid-cont">
             {motorData.map((item) => (
-              <div key={item.id}>
+              <div key={item.id} className="delete__motor--container">
                 <img
                   src={item.photo}
                   alt={item.brand_name}
