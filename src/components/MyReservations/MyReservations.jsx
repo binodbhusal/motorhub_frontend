@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchReservations, deleteRreservation } from '../../redux/slice/fetchdata';
+import { fetchReservations } from '../../redux/slice/fetchdata';
 import MobileNavbar from '../navigation/MobileNavbar';
 import NavigationPanel from '../navigation/NavigationPanel';
 import './myReservations.css';
