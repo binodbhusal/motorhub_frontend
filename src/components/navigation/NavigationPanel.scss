@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   position: fixed;
-  border: 2px solid green;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 
   .logo-container {
     align-self: center;
@@ -12,7 +12,7 @@
     margin-bottom: 2rem;
 
     .motor-logo {
-      width: 100px;
+      height: 60px;
     }
   }
 
@@ -48,6 +48,7 @@
           font-size: 1.2rem;
           width: 100%;
           height: 100%;
+          text-transform: uppercase;
         }
 
         .nav-item:not(.active):hover {

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 import { motorsItem, deleteMotorItem } from '../../redux/slice/motorSlice'; // Import the deleteMotorItem action
 import NavigationPanel from '../navigation/NavigationPanel';
@@ -28,14 +27,14 @@ const DeleteMotor = () => {
           <h1>Latest models</h1>
           <h5>Delete a model</h5>
         </div>
-        <div className="swiper-cont">
-          <div className="grid-container">
+        <div className="delete-motors-cont">
+          <div className="delete-motors-grid-cont">
             {motorData.map((item) => (
-              <SwiperSlide key={item.id}>
+              <div key={item.id}>
                 <img
                   src={item.photo}
                   alt={item.brand_name}
-                  className="img-img"
+                  className="imgage-image"
                 />
                 <Link to={`/MotorDetails/${item.id}`}>
                   <h4>
@@ -51,7 +50,7 @@ const DeleteMotor = () => {
                 >
                   Delete Motor
                 </button>
-              </SwiperSlide>
+              </div>
             ))}
           </div>
         </div>

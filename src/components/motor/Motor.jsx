@@ -34,6 +34,17 @@ const Motor = () => {
           slidesPerView={3}
           spaceBetween={20}
           slidesPerGroup={1}
+          breakpoints={{
+            850: {
+              slidesPerView: 3,
+            },
+            480: {
+              slidesPerView: 2,
+            },
+            0: {
+              slidesPerView: 1,
+            },
+          }}
         >
 
           {motorData.map((item) => (
