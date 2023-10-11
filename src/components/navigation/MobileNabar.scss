@@ -69,6 +69,10 @@
     color: var(--white-color);
     font-size: 1.2rem;
     font-weight: 600;
+
+    .nav-item {
+      text-transform: uppercase;
+    }
   }
 
   @media screen and (min-width: 850px) {
