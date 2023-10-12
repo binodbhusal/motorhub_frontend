@@ -44,6 +44,7 @@ The Motorhub - Online Motor Reservation System is a web application designed to 
 </div>
 
 #### Link to [Frontend](https://github.com/binodbhusal/final_capstone_frontend)
+#### Link to [API Documentation](Comming soon)
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -60,16 +61,16 @@ The Motorhub - Online Motor Reservation System is a web application designed to 
 
 ### Key Features <a name="key-features"></a>
 
-1-User Authentication: The system allows users to create accounts and log in
-2-Motors Listings: Motors providers can list their available motors. Each listing includes details such as the brand, model, manufacturer, price, description, and location.
-3-Reservation Management: Users can view available motors at different locations and make reservations
-4-Add and delete motors in including location
+1. User Authentication: The system allows users to create accounts and log in
+2. Motors Listings: Motors providers can list their available motors. Each listing includes details such as the brand, model, manufacturer, price, description, and location.
+3. Reservation Management: Users can view available motors at different locations and make reservations
+4. Add and delete motors in including location
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Here's the link to my deployed project:
+> Here's the link to deployed project:
 > Click on this [Coming Soon](#) to view the live-demo of project
 
 - []()
@@ -82,8 +83,9 @@ Link to the [Kanban Board](https://github.com/users/binodbhusal/projects/4/views
 
 All 4 Authors have been contributing to this project from start to finish
 
-You can find the initial snapshot and setup of the Kanban board [here](https://github.com/binodbhusal/final_capstone_backend/issues).
+You can find the initial snapshot and setup of the Kanban board [here](https://github.com/binodbhusal/final_capstone_backend/issues/8).
 
+ <img src="/Users/binodbhusal/Desktop/finalbackend/final_capstone_backend/app/ER_diagram/kanban_screenshot.jpg" width="600"  height="auto" />
 ## Video Presentation <a name="video-presentation"></a>
 
 Click on this [Coming Soon](#) to view the video walkthrough of this project
@@ -98,9 +100,9 @@ Click on this [Coming Soon](#) to view the video walkthrough of this project
 
 In order to run this project you need:
 
-- Installed Git.
-- Installed Ruby
-- Installed Ruby on Rails
+- Have Git installed.
+- Have Ruby installed. 
+- Have Ruby on Rails installed
 - Create a local directory that you want to clone the repository.
 - Open the command prompt in the created directory.
 - On the terminal run this command git clone https://github.com/binodbhusal/final_capstone_backend.git
@@ -122,7 +124,7 @@ bundle install
 ```
 
 ```sh
-bundle exec rails db:create db:migrate
+bundle exec rails db:create db:migrate db:seed
 ```
 
 ```sh
