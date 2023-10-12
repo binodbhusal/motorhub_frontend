@@ -78,7 +78,7 @@ motor5 = Motor.create(
   model_no: '1020',
   manufacturer: 'Tesla Motors',
   manufacture_date: Date.new(2023, 1, 20),
-  description: 'The car that kickstarted the EV revolution is starting to show its age. While the 2023 Tesla Model S falls behind newly developed rivals with more over-the-top features and longer driving ranges, the sedan-like hatchback continues to be competitive. After all, the Model S offers up to 405 miles of range on a single charge. Plus, the 1020-hp tri-motor Plaid performance model leaps to 60 mph in just 2.1 seconds, which is as quick as a multimillion-dollar hypercar.',
+  description: 'The car that kickstarted the EV revolution is starting to show its age.',
   photo: 'https://hips.hearstapps.com/hmg-prod/images/2020-porsche-taycan-4s-vs-2020-tesla-model-s-long-range-202-1621386342.jpg?crop=0.842xw:0.711xh;0,0.161xh&resize=1200:*',
   unit_price: 76630.0,
   purchase_fee: 766.33,
