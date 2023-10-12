@@ -3,7 +3,7 @@
 <div align="center">
 
   <br/>
-  <h1>Motor's Reservation</h1>
+  <h1>Motorhub</h1>
 
 </div>
 
@@ -30,16 +30,16 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# Motor's Reservation <a name="about-project"></a>
+# Motorhub <a name="about-project"></a>
 
-> The Backend for the Motor's Reservation app. Built using Ruby on Rails.
+The Motorhub - Online Motor Reservation System is a web application designed to provide users with the ability to reserve, view, and manage motors such as cars and bikes reservation for purchases. The system aims to streamline the process of finding and booking motors from various locations, making it convenient for both users and motor providers.
 
 <!-- ER diagram"-->
 
 # Database Schema <a name="ER-diagram"></a>
 
 <div align="center">
- <img src="https://github.com/binodbhusal/final_capstone_backend/blob/dev/app/ER_diagram/drawSQL-motorhub-final-capstone-project-export-2023-09-29.png" alt="schema" width="600"  height="auto" />
+ <img src="https://drawsql.app/teams/binod-1/diagrams/motorhub-final-capstone-project" alt="schema" width="600"  height="auto" />
   <br/>
 </div>
 
@@ -60,9 +60,10 @@
 
 ### Key Features <a name="key-features"></a>
 
-- Authentication
-- CRUD
-- Image Upload
+1-User Authentication: The system allows users to create accounts and log in
+2-Motors Listings: Motors providers can list their available motors. Each listing includes details such as the brand, model, manufacturer, price, description, and location.
+3-Reservation Management: Users can view available motors at different locations and make reservations
+4-Add and delete motors in including location
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -186,7 +187,9 @@ If you liked this project, give it a ⭐️ and kindly send to me an e-mail expr
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-We would like to thank Microverse for this opportunity.
+Hats off to Murat Korkmaz for designing the awesome template that was used. ✨
+Microverse for giving us this chance
+The amazing code reviewers for making us improve every day 👍
 
 Original design idea by [Murat Korkmaz on Behance](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign).
 
