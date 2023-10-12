@@ -35,7 +35,6 @@ class Api::MotorsController < ApplicationController
 
     # Create a new motor and associate it with the store_location
     @motor = Motor.new(motor_params)
-    @motor.user_id = 1
     @motor.store_location = store_location
 
     if @motor.save
@@ -74,6 +73,6 @@ class Api::MotorsController < ApplicationController
 
   def motor_params
     params.require(:motor).permit(:brand_name, :model_no, :manufacturer, :manufacture_date, :description, :photo,
-                                  :unit_price, :purchase_fee, :finance_fee, :total_price, :city_name)
+                                  :unit_price, :purchase_fee, :finance_fee, :total_price, :city_name, :user_id)
   end
 end
