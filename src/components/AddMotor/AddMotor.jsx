@@ -1,31 +1,30 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useDispatch, useSelector } from "react-redux";
-import { createLocation } from "../../redux/slice/locationSlice";
-import { createMotor } from "../../redux/slice/fetchdata";
-import MobileNavbar from "../navigation/MobileNavbar";
-import NavigationPanel from "../navigation/NavigationPanel";
-import "./AddMotor.scss";
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { createLocation } from '../../redux/slice/locationSlice';
+import { createMotor } from '../../redux/slice/fetchdata';
+import MobileNavbar from '../navigation/MobileNavbar';
+import NavigationPanel from '../navigation/NavigationPanel';
+import './AddMotor.scss';
 
 const AddMotor = () => {
   const { user } = useSelector((store) => store.user);
   const dispatch = useDispatch();
   const initialLocationData = {
-    city_name: "",
+    city_name: '',
   };
 
   const initialMotorData = {
     location_id: initialLocationData.id,
-    brand_name: "",
-    model_no: "",
-    manufacturer: "",
-    manufacture_date: "",
-    description: "",
-    photo: "",
-    unit_price: "",
-    purchase_fee: "",
-    finance_fee: "",
-    total_price: "",
+    brand_name: '',
+    model_no: '',
+    manufacturer: '',
+    manufacture_date: '',
+    description: '',
+    photo: '',
+    unit_price: '',
+    purchase_fee: '',
+    finance_fee: '',
+    total_price: '',
     user_id: user.id,
   };
   const [locationData, setLocationData] = useState(initialLocationData);
