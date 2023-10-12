@@ -37,7 +37,7 @@
 }
 
 .imgage-image {
-height: 200px;
+  height: 200px;
   width: 200px;
   border-radius: 50%;
   object-fit: fill;
@@ -46,6 +46,5 @@ height: 200px;
 .delete__motor--container {
   display: flex;
   flex-direction: column;
-  justify-content: 1rem;
   align-items: center;
 }

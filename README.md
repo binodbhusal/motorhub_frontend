@@ -1,70 +1,197 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+  <br/>
+  <h1>Motorhub</h1>
 
-In the project directory, you can run:
+</div>
 
-### `npm start`
+## 📗 Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [📖 About the Project](#about-project)
+  - [Schema](#ER-diagram)
+  - [🛠 Built With ](#-built-with-)
+  - [Tech Stack ](#tech-stack-)
+  - [Key Features ](#key-features-)
+  - [🚀 Live Demo](#live-demo)
+  - [Kanban Board](#kanban)
+  - [Video Presentation](#video-presentation)
+- [💻 Getting Started ](#-getting-started-)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
+  - [Run Tests](#run-tests)
+  - [👥 Authors ](#-authors-)
+- [🔭 Future Features:](#-future-features)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<!-- PROJECT DESCRIPTION -->
 
-### `npm test`
+# Motorhub <a name="about-project"></a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The Motorhub - Online Motor Reservation System is a web application designed to provide users with the ability to reserve, view, and manage motors such as cars and bikes reservation for purchases. The system aims to streamline the process of finding and booking motors from various locations, making it convenient for both users and motor providers.
 
-### `npm run build`
+<!-- ER diagram"-->
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Link to [Backend](https://github.com/binodbhusal/final_capstone_backend)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠 Built With <a name="built-with"></a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Tech Stack <a name="tech-stack"></a>
 
-### `npm run eject`
+<details>
+  <summary>Framework</summary>
+  <ul>
+    <li><a href="https://react.dev/">React</a></li>
+    <li><a href="https://redux.js.org/">Redux</a></li>
+    <li><a href="#">CSS</a></li>
+  </ul>
+</details>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<!-- Features -->
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Key Features <a name="key-features"></a>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1-User Authentication: The system allows users to create accounts and log in
+2-Motors Listings: Motors providers can list their available motors. Each listing includes details such as the brand, model, manufacturer, price, description, and location.
+3-Reservation Management: Users can view available motors at different locations and make reservations
+4-Add and delete motors in including location
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Learn More
+## 🚀 Live Demo <a name="live-demo"></a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+> Here's the link to my deployed project:
+> Click on this [Coming Soon](#) to view the live-demo of project
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- []()
 
-### Code Splitting
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🎬 Kanban Board <a id="kanban"></a>
 
-### Analyzing the Bundle Size
+Link to the [Kanban Board](https://github.com/users/binodbhusal/projects/4/views/1)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+All 4 Authors have been contributing to this project from start to finish
 
-### Making a Progressive Web App
+You can find the initial snapshot and setup of the Kanban board [here](https://github.com/binodbhusal/final_capstone_backend/issues).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Video Presentation <a name="video-presentation"></a>
 
-### Advanced Configuration
+Click on this [Coming Soon](#) to view the video walkthrough of this project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Deployment
+<!-- GETTING STARTED -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 💻 Getting Started <a name="getting-started"></a>
 
-### `npm run build` fails to minify
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+In order to run this project you need:
+
+- Installed Git.
+- Installed React
+- Installed Redux
+- Create a local directory that you want to clone the repository.
+- Open the command prompt in the created directory.
+- On the terminal run this command git clone https://github.com/binodbhusal/final_capstone_frontend.git
+
+### Setup
+
+Clone this repository to your desired folder:
+
+```sh
+git clone https://github.com/binodbhusal/final_capstone_frontend.git
+```
+
+```sh
+cd final_capstone_frontend
+```
+
+````
+
+```sh
+npm install
+````
+
+```sh
+npm start
+```
+
+### Run Tests
+
+npm test
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+### 👤 **Dieum Akonkwa**:
+
+- GitHub: [@dieum512](https://github.com/dieum512)
+- Twitter: [@twitter](https://twitter.com/dieumakonkw)
+- LinkedIn: [@linkedin]()
+
+### 👤 **Alijan Rahimi**
+
+- GitHub: [@rahimialijan](https://github.com/rahimialijan)
+- Twitter: [@twitter](https://twitter.com/AlijanRahimi10)
+- LinkedIn: [@linkedin](https://www.linkedin.com/in/alijan-rahimi-18389ab3/)
+
+### 👤 **Binod Bhusal**
+
+- GitHub: [@binodbhusal](https://github.com/binodbhusal)
+- Twitter: [@twitter](https://twitter.com/Binod_ironLad)
+- LinkedIn: [@linkedin](https://www.linkedin.com/in/binodbhusal/)
+
+### 👤 **Salomon Tshobohwa**:
+
+- GitHub: [@Tshobohwa ](https://github.com/Tshobohwa)
+- LinkedIn: [@linkedin](https://www.linkedin.com/in/tshobohwasalomon/)
+
+# 🔭 Future Features:
+
+- Proper authentication
+- Authorization
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/binodbhusal/final_capstone_frontend/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you liked this project, give it a ⭐️ and kindly send to me an e-mail expressing it, it would make our day and fuel our motivation.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+Hats off to Murat Korkmaz for designing the awesome template that was used. ✨
+Microverse for giving us this chance
+The amazing code reviewers for making us improve every day 👍
+
+Original design idea by [Murat Korkmaz on Behance](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
