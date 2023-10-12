@@ -36,7 +36,8 @@
   position: relative;
 }
 
-.swiper-cont .swiper { /** the swiper class comes from the library */
+.swiper-cont .swiper {
+  /** the swiper class comes from the library */
   width: 90%;
 
   /* height: 30rem; */
@@ -56,7 +57,10 @@
 }
 
 .img-img {
-  height: 150px; /* just to hold the picture's height */
+  height: 200px;
+  width: 300px;
+  border-radius: 6px;
+  object-fit: fill;
 }
 
 /* social icons styling */

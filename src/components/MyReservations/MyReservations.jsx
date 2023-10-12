@@ -7,7 +7,8 @@ import './myReservations.css';
 
 const MyReservations = () => {
   const dispatch = useDispatch();
-  const userId = 2; // Replace with the actual user ID you want to fetch reservations for
+  const { user } = useSelector((store) => store.user);
+  const userId = user.id;
   const { reserves, isLoading, isError } = useSelector((state) => state.reserve);
 
   useEffect(() => {

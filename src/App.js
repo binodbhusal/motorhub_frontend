@@ -21,7 +21,7 @@ function App() {
           <Route path="sign_up" element={<SignUp />} />
           <Route element={<PrivateRoutes />}>
             <Route path="/" element={<MainPage />} />
-            {/* <Route path="/Reserve" element={<Reserve />} /> */}
+            <Route path="/Reserve" element={<Reservation />} />
             <Route path="/MyReservations" element={<MyReservations />} />
             <Route path="/AddMotor" element={<AddMotor />} />
             <Route path="/DeleteMotor" element={<DeleteMotor />} />

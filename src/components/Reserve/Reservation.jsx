@@ -13,7 +13,7 @@ const Reservation = () => {
   const dispatch = useDispatch();
   const { motorDetail } = useSelector((state) => state.motorDetails);
   const { citynames } = useSelector((state) => state.cityname);
-  const userId = 2;
+  const { user } = useSelector((store) => store.user);
   const [formData, setFormData] = useState({
     reserve_date: '',
     city_name: '',
@@ -37,13 +37,13 @@ const Reservation = () => {
     }
 
     const reservationData = {
-      user_id: userId ? parseInt(userId, 10) : null, // Convert to integer or null
+      user_id: user.id,
       motor_id: motorDetail.id,
       reserve_date: formData.reserve_date,
       city_name: formData.city_name,
     };
 
-    dispatch(createReservation({ reserveData: reservationData, userId }))
+    dispatch(createReservation({ reserveData: reservationData, userId: user.id }))
       .then(() => {
         navigate('/reserveconfirm');
       })
@@ -82,12 +82,10 @@ const Reservation = () => {
               </p>
             </div>
             )}
-            {userId !== null && (
+            {user.id !== null && (
             <div>
               <h2>
-                Username or ID:
-                {' '}
-                {userId}
+                {user.name}
               </h2>
             </div>
             )}
