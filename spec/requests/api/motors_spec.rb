@@ -114,7 +114,6 @@ RSpec.describe 'API Motors', type: :request do
           puts "Motor Created: #{response.body}"
         end
       end
-
     end
   end
 end
