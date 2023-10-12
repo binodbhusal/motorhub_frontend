@@ -63,7 +63,7 @@ motor4 = Motor.create(
   model_no: '497',
   manufacturer: 'Piaggio & C. SpA',
   manufacture_date: Date.new(2023, 5, 25),
-  description: 'The GTS chassis has improved suspension too. While both front and rear units have been retuned to further improve comfort and stability, the front suspension in particular has been vastly redesigned. While still based on the traditional trailing-link layout, the components now appear stronger and show more refined geometry, including the brake caliper mounting. Piaggio did not release any specific technical data, but it claims that the front end now feels more stable at speed and more responsive as well.',
+  description: 'The GTS chassis has improved suspension too.',
   photo: 'https://www.algateckids.pt/images/articulos/max/moto_vespa_classica_metallica_ambosstoys_3202-1.jpg',
   unit_price: 7799.0,
   purchase_fee: 77.99,
