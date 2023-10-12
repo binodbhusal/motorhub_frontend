@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { createReservation, fetchReservations } from './fetchdata';
 
 const initialState = {

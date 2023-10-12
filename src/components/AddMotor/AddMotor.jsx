@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createLocation } from '../../redux/slice/locationSlice';
 import { createMotor } from '../../redux/slice/fetchdata';
@@ -70,7 +70,7 @@ const AddMotor = () => {
   };
 
   return (
-    <div className="main-container">
+    <div data-testid="addmotor-1" className="main-container">
       <MobileNavbar className="mobile-navbar" />
       <NavigationPanel className="left-panel" />
       <div className="addmotor-container">

@@ -44,6 +44,7 @@ const DeleteMotor = () => {
                   </h4>
                 </Link>
                 <button
+                  data-testid={`delete-${item.id}`}
                   type="submit"
                   className="btn btn-outline-danger"
                   onClick={() => handleDelete(item.id)} // Call handleDelete with motor ID
