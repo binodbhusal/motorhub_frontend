@@ -1,0 +1,175 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/users":
+    post:
+      summary: Creates a user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '201':
+          description: user created
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                role:
+                  type: string
+              required:
+              - name
+              - role
+  "/api/motors":
+    get:
+      summary: Lists all motors
+      tags:
+      - Motors
+      responses:
+        '200':
+          description: list of motors
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/Motor"
+    post:
+      summary: Creates a motor
+      tags:
+      - Motors
+      parameters: []
+      responses:
+        '201':
+          description: motor created
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                location_id:
+                  type: integer
+                unit_price:
+                  type: number
+                purchase_fee:
+                  type: number
+                finance_fee:
+                  type: number
+                total_price:
+                  type: number
+                brand_name:
+                  type: string
+                model_no:
+                  type: integer
+                manufacturer:
+                  type: string
+                manufacture_date:
+                  type: string
+                  format: date
+                description:
+                  type: string
+                photo:
+                  type: string
+              required:
+              - user_id
+              - location_id
+              - unit_price
+              - purchase_fee
+              - finance_fee
+              - total_price
+              - brand_name
+              - model_no
+              - manufacturer
+              - manufacture_date
+              - description
+              - photo
+  "/api/users/{user_id}/reservations":
+    post:
+      summary: Creates a reservation
+      tags:
+      - Reservations
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '201':
+          description: reservation created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                motor_id:
+                  type: integer
+                reserve_date:
+                  type: string
+                  format: date
+                city_name:
+                  type: string
+              required:
+              - motor_id
+              - reserve_date
+              - city_name
+    get:
+      summary: Lists reservations
+      tags:
+      - Reservations
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: list of reservations
+        '404':
+          description: user not found
+  "/api/stores_location":
+    post:
+      summary: Creates a store location
+      tags:
+      - Store Locations
+      parameters: []
+      responses:
+        '201':
+          description: store location created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                city_name:
+                  type: string
+              required:
+              - city_name
+    get:
+      summary: Lists store locations
+      tags:
+      - Store Locations
+      responses:
+        '200':
+          description: list of store locations
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
