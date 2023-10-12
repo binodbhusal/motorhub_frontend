@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { fetchCityname } from '../../redux/slice/citySlice';
 import { createReservation } from '../../redux/slice/fetchdata';
+import MobileNavbar from '../navigation/MobileNavbar';
+import NavigationPanel from '../navigation/NavigationPanel';
+import './Reserve.scss';
 
 const Reservation = () => {
   const { id } = useParams();
@@ -10,7 +13,7 @@ const Reservation = () => {
   const dispatch = useDispatch();
   const { motorDetail } = useSelector((state) => state.motorDetails);
   const { citynames } = useSelector((state) => state.cityname);
-  const userId = 2;
+  const { user } = useSelector((store) => store.user);
   const [formData, setFormData] = useState({
     reserve_date: '',
     city_name: '',
@@ -34,13 +37,13 @@ const Reservation = () => {
     }
 
     const reservationData = {
-      user_id: userId ? parseInt(userId, 10) : null, // Convert to integer or null
+      user_id: user.id,
       motor_id: motorDetail.id,
       reserve_date: formData.reserve_date,
       city_name: formData.city_name,
     };
 
-    dispatch(createReservation({ reserveData: reservationData, userId }))
+    dispatch(createReservation({ reserveData: reservationData, userId: user.id }))
       .then(() => {
         navigate('/reserveconfirm');
       })
@@ -50,83 +53,94 @@ const Reservation = () => {
   };
 
   return (
-    <div>
-      <h1>Reserve Motor</h1>
+    <div className="main-container">
+      <MobileNavbar className="mobile-navbar" />
+      <NavigationPanel className="left-panel" />
 
-      {selectMotorMessage && <p>{selectMotorMessage}</p>}
-      {id && motorDetail && (
-        <div>
-          <h2>Motor Details:</h2>
-          <p>
-            Brand Name:
-            {' '}
-            {motorDetail.brand_name}
-          </p>
-          <p>
-            Model No:
-            {' '}
-            {motorDetail.model_no}
-          </p>
-        </div>
-      )}
-      {userId !== null && (
-        <div>
-          <h2>
-            Username or ID:
-            {' '}
-            {userId}
-          </h2>
-        </div>
-      )}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="reserve_date">
-            Select Date:
-            <input
-              type="date"
-              id="reserve_date"
-              name="reserve_date"
-              value={formData.reserve_date}
-              onChange={handleChange}
-            />
-          </label>
-        </div>
-        <div>
-          <select id="city_name" name="city_name" value={formData.city_name} onChange={handleChange}>
-            <option value="">Select a city</option>
-            {citynames.map((city) => (
-              <option key={city.id} value={city.city_name}>
-                {city.city_name}
-              </option>
-            ))}
-          </select>
-        </div>
-        <button type="submit">Reserve Motor</button>
-      </form>
-      {!motorDetail && (
-        <p>
-          No motor details available.
-          {' '}
-          <Link to="/">Click here</Link>
-          {' '}
-          to select a motor which  you want to Reserve & click on Reserve.
-        </p>
-      )}
-      {id && !motorDetail && (
-        <p>
-          Please select a motor first.
-          {' '}
-          <Link to="/">Click here</Link>
-          {' '}
-          to select a motor.
-        </p>
-      )}
-      <p>
+      <div className="lifestyle-container reserve-details">
+        <div className="second-cont">
+          <h1 className="list-reserved-title">Reserve Motor</h1>
 
-        <Link to="/">Click here</Link>
+          <div className="reserve-motor-cont">
+            {selectMotorMessage && <p>{selectMotorMessage}</p>}
+            {id && motorDetail && (
+            <div className="motor-reserved">
+              <h2>Motor Details:</h2>
+              <p>
+                Brand Name:
+                {' '}
+                <span className="bold-reservaiton">
+                  {motorDetail.brand_name}
+                </span>
+              </p>
+              <p>
+                Model No:
+                {' '}
+                <span className="bold-reservaiton">
+                  {motorDetail.model_no}
+                </span>
+              </p>
+            </div>
+            )}
+            {user.id !== null && (
+            <div>
+              <h2>
+                {user.name}
+              </h2>
+            </div>
+            )}
+            <form onSubmit={handleSubmit}>
+              <div className="date-selector">
+                <label htmlFor="reserve_date">
+                  Select Date:
+                  <input
+                    type="date"
+                    id="reserve_date"
+                    name="reserve_date"
+                    value={formData.reserve_date}
+                    onChange={handleChange}
+                  />
+                </label>
+              </div>
+              <div>
+                <select id="city_name" name="city_name" value={formData.city_name} onChange={handleChange} className="select-city-btn">
+                  <option value="">Select a city</option>
+                  {citynames.map((city) => (
+                    <option key={city.id} value={city.city_name}>
+                      {city.city_name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <button type="submit" className="reserve-motor-btn">Reserve Motor</button>
+            </form>
+            {!motorDetail && (
+            <p>
+              No motor details available.
+              {' '}
+              <Link to="/">Click here</Link>
+              {' '}
+              to select a motor which  you want to Reserve & click on Reserve.
+            </p>
+            )}
+            {id && !motorDetail && (
+            <p>
+              Please select a motor first.
+              {' '}
+              <Link to="/">Click here</Link>
+              {' '}
+              to select a motor.
+            </p>
+            )}
+            <p>
 
-        to select a motors if you have not selected
-      </p>
+              <Link to="/">Click here</Link>
+
+              to select a motors if you have not selected
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,14 +1,7 @@
 .motor-container {
   width: 80%;
   margin-left: 20%;
-
-  @media screen and (max-width: 850px) {
-    margin-top: 18%;
-  }
-
-  @media screen and (min-width: 850px) {
-    margin-top: 6%;
-  }
+  margin-top: 9%;
 }
 
 .models-titles {
@@ -43,7 +36,8 @@
   position: relative;
 }
 
-.swiper-cont .swiper { /** the swiper class comes from the library */
+.swiper-cont .swiper {
+  /** the swiper class comes from the library */
   width: 90%;
 
   /* height: 30rem; */
@@ -63,7 +57,10 @@
 }
 
 .img-img {
-  height: 150px; /* just to hold the picture's height */
+  height: 200px;
+  width: 300px;
+  border-radius: 6px;
+  object-fit: fill;
 }
 
 /* social icons styling */
@@ -75,4 +72,32 @@
 .item-description {
   font-size: 16px;
   font-style: italic;
+}
+
+/* -------------- TABLET VERSION ---------------- */
+@media (max-width: 850px) {
+  .motor-container {
+    width: 90%;
+    margin: 15% 5% 2% 5%;
+  }
+
+  /* swipper */
+  .swiper-cont .swiper-button-prev,
+  .swiper-cont .swiper-button-next {
+    display: none;
+  }
+}
+
+/* -------------- TABLET VERSION ---------------- */
+@media (max-width: 850px) {
+  .motor-container {
+    width: 90%;
+    margin: 15% 5% 2% 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .motor-container {
+    margin: 25% 5% 2% 5%;
+  }
 }

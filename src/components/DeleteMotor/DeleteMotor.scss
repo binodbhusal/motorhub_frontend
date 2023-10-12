@@ -12,10 +12,39 @@
   .motor-container {
     position: absolute;
   }
+}
 
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 15px;
+.delete-motors-cont {
+  padding: 0 10%;
+
+  @media (max-width: 850px) {
+    padding: 10% 5%;
   }
+}
+
+.delete-motors-grid-cont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+
+  @media (max-width: 850px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.imgage-image {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  object-fit: fill;
+}
+
+.delete__motor--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

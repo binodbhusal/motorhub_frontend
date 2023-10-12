@@ -34,11 +34,24 @@ const Motor = () => {
           slidesPerView={3}
           spaceBetween={20}
           slidesPerGroup={1}
+          breakpoints={{
+            850: {
+              slidesPerView: 3,
+            },
+            480: {
+              slidesPerView: 2,
+            },
+            0: {
+              slidesPerView: 1,
+            },
+          }}
         >
 
           {motorData.map((item) => (
             <SwiperSlide>
-              <img src={item.photo} alt={item.brand_name} className="img-img" />
+              <div className="motor__img--container">
+                <img src={item.photo} alt={item.brand_name} className="img-img" />
+              </div>
               <Link to={`/MotorDetails/${item.id}`}>
                 <h4>
                   <span>{item.brand_name }</span>

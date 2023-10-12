@@ -1,29 +1,32 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { createLocation } from '../../redux/slice/locationSlice';
-import { createMotor } from '../../redux/slice/fetchdata';
-import MobileNavbar from '../navigation/MobileNavbar';
-import NavigationPanel from '../navigation/NavigationPanel';
-import './AddMotor.scss';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { createLocation } from "../../redux/slice/locationSlice";
+import { createMotor } from "../../redux/slice/fetchdata";
+import MobileNavbar from "../navigation/MobileNavbar";
+import NavigationPanel from "../navigation/NavigationPanel";
+import "./AddMotor.scss";
 
 const AddMotor = () => {
+  const { user } = useSelector((store) => store.user);
   const dispatch = useDispatch();
   const initialLocationData = {
-    city_name: '',
+    city_name: "",
   };
 
   const initialMotorData = {
     location_id: initialLocationData.id,
-    brand_name: '',
-    model_no: '',
-    manufacturer: '',
-    manufacture_date: '',
-    description: '',
-    photo: '',
-    unit_price: '',
-    purchase_fee: '',
-    finance_fee: '',
-    total_price: '',
+    brand_name: "",
+    model_no: "",
+    manufacturer: "",
+    manufacture_date: "",
+    description: "",
+    photo: "",
+    unit_price: "",
+    purchase_fee: "",
+    finance_fee: "",
+    total_price: "",
+    user_id: user.id,
   };
   const [locationData, setLocationData] = useState(initialLocationData);
   const [motorData, setMotorData] = useState(initialMotorData);
@@ -84,6 +87,7 @@ const AddMotor = () => {
                   value={locationData.city_name}
                   onChange={handleLocationChange}
                   placeholder="Location Name:"
+                  required
                 />
               </div>
             </div>
@@ -98,6 +102,7 @@ const AddMotor = () => {
                     name="brand_name"
                     value={motorData.brand_name}
                     onChange={handleMotorChange}
+                    required
                   />
                 </div>
                 <div className="form-group">
@@ -108,6 +113,7 @@ const AddMotor = () => {
                     name="model_no"
                     value={motorData.model_no}
                     onChange={handleMotorChange}
+                    required
                   />
                 </div>
                 <div className="form-group">
@@ -118,6 +124,7 @@ const AddMotor = () => {
                     name="manufacturer"
                     value={motorData.manufacturer}
                     onChange={handleMotorChange}
+                    required
                   />
                 </div>
                 <div className="form-group">
@@ -128,6 +135,7 @@ const AddMotor = () => {
                     name="manufacture_date"
                     value={motorData.manufacture_date}
                     onChange={handleMotorChange}
+                    required
                   />
                 </div>
               </div>
@@ -140,6 +148,7 @@ const AddMotor = () => {
                     name="photo"
                     value={motorData.photo}
                     onChange={handleMotorChange}
+                    required
                   />
                 </div>
                 <div className="form-group">
@@ -150,6 +159,7 @@ const AddMotor = () => {
                     name="unit_price"
                     value={motorData.unit_price}
                     onChange={handleUnitPriceChange}
+                    required
                   />
                 </div>
                 <div className="form-group">

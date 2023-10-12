@@ -1,17 +1,41 @@
-.main-container {
-  position: relative;
+.reserve-motor-cont {
+  border: 2px solid var(--secondary-color);
+  background: #fff;
+  padding: 50px;
+  border-radius: 50px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
 
-  .left-panel {
-    position: fixed;
-  }
+.motor-reserved h2 {
+  color: rgb(16, 121, 16);
+}
 
-  .mobile-navbar {
-    position: fixed;
-  }
+.date-selector {
+  margin-bottom: 20px;
+}
 
-  .lifestyle-container {
-    position: absolute;
-    top: 5rem;
-    left: 20%;
+.date-selector label input {
+  margin-left: 20px;
+  padding: 6px 20px;
+}
+
+.select-city-btn,
+.reserve-motor-btn {
+  border: none;
+  background: var(--secondary-color);
+  padding: 8px 20px;
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.reserved-messages {
+  color: #fff;
+}
+
+/* -------------- PHONE VERSION ---------------- */
+@media (max-width: 480px) {
+  .reserve-motor-cont {
+    padding: 20px;
+    border-radius: 20px;
   }
 }
