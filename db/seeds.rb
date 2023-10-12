@@ -29,10 +29,7 @@ motor2 = Motor.create(
   model_no: '456',
   manufacturer: 'Bayerische Motoren Werke AG',
   manufacture_date: Date.new(2023, 3, 20),
-  description: 'THE SECOND GENERATION.
-  (BMW F48)
-  BMW X Series BMW X1 F48 second generation three-quarter side view standing in front of a city
-  The second-generation BMW X1 has a more dynamic and sporty appearance than its predecessor. Launched in 2023, it’s distinguished by innovative technologies, such as an optional head-up display. A new range of turbocharged diesel and petrol engines give both efficiency and sportiness',
+  description: 'The second-generation BMW X1 has a more dynamic and sporty appearance than its predecessor.',
   photo: 'https://media.gettyimages.com/id/1366436208/pt/foto/bmw-x3-on-a-road.jpg?s=1024x1024&w=gi&k=20&c=QwELosTux3_OTFmzAUOKF69JnjKjqM01OvF67LSrjnk=',
   unit_price: 50000.0,
   purchase_fee: 500.0,
