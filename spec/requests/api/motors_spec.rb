@@ -92,6 +92,29 @@ RSpec.describe 'API Motors', type: :request do
                      manufacturer manufacture_date description photo]
       }
 
+      response '201', 'motor created' do
+        let(:motor) do
+          {
+            user_id: 1,
+            location_id: 1,
+            unit_price: 10.0,
+            purchase_fee: 10.0,
+            finance_fee: 10.0,
+            total_price: 10.0,
+            brand_name: 'Suzuki',
+            model_no: 1234,
+            manufacturer: 'Mitsubishi',
+            manufacture_date: '2022-10-20',
+            description: 'Motor',
+            photo: 'https://motor.jpeg'
+          }
+        end
+        run_test! do
+          expect(response.status).to eq(201)
+          puts "Motor Created: #{response.body}"
+        end
+      end
+
     end
   end
 end
