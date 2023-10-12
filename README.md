@@ -39,7 +39,7 @@ The Motorhub - Online Motor Reservation System is a web application designed to 
 # Database Schema <a name="ER-diagram"></a>
 
 <div align="center">
- <img src="https://drawsql.app/teams/binod-1/diagrams/motorhub-final-capstone-project" alt="schema" width="600"  height="auto" />
+ <img src="https://github.com/binodbhusal/final_capstone_backend/blob/dev/app/ER_diagram/drawSQL-motorhub-final-capstone-project-export-2023-10-11.png?raw=true" width="600"  height="auto" />
   <br/>
 </div>
 
