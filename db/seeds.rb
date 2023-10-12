@@ -47,7 +47,7 @@ motor3 = Motor.create(
   model_no: '1918',
   manufacturer: 'Harley-Davidson, Inc.',
   manufacture_date: Date.new(2023, 5, 25),
-  description: 'A liquid-cooled V-Twin tuned to make tremendous torque at low RPM, with a torque curve that stays flat through the powerband.Build road confidence by selecting different pre-programmed ride modes. Switch between Road, Rain and Sport, or customize your own.',
+  description: 'Build road confidence by selecting different pre-programmed ride modes.',
   photo: 'https://cdn.pixabay.com/photo/2017/01/11/15/26/harley-1972061_1280.jpg',
   unit_price: 14999.0,
   purchase_fee: 149.99,
