@@ -58,10 +58,9 @@
 
 .img-img {
   height: 200px;
-  width: 200px;
-  border-radius: 50%;
+  width: 300px;
+  border-radius: 6px;
   object-fit: fill;
-  /* just to hold the picture's height */
 }
 
 /* social icons styling */

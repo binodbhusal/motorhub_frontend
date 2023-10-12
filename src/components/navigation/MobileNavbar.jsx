@@ -8,9 +8,9 @@ import { logOut } from '../../redux/slice/userSlice';
 const links = [
   { path: '/', text: 'Motors' },
   { path: '/Reserve', text: 'Reserve' },
-  { path: '/MyReservations', text: 'MyReservations' },
-  { path: '/AddMotor', text: 'AddMotor' },
-  { path: '/DeleteMotor', text: 'DeleteMotor' },
+  { path: '/MyReservations', text: 'My Reservations' },
+  { path: '/AddMotor', text: 'Add Motor' },
+  { path: '/DeleteMotor', text: 'Delete Motor' },
 ];
 
 const MobileNavbar = () => {
