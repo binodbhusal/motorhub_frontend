@@ -85,7 +85,7 @@ All 4 Authors have been contributing to this project from start to finish
 
 You can find the initial snapshot and setup of the Kanban board [here](https://github.com/binodbhusal/final_capstone_backend/issues/8).
 
- <img src="/Users/binodbhusal/Desktop/finalbackend/final_capstone_backend/app/ER_diagram/kanban_screenshot.jpg" width="600"  height="auto" />
+ <img src="https://github.com/binodbhusal/final_capstone_backend/blob/dev/app/ER_diagram/kanban_screenshot.jpg" width="600"  height="auto" />
 ## Video Presentation <a name="video-presentation"></a>
 
 Click on this [Coming Soon](#) to view the video walkthrough of this project
