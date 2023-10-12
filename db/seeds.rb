@@ -14,7 +14,7 @@ motor1 = Motor.create(
   model_no: '718',
   manufacturer: 'Porsche Automobil Holding SE',
   manufacture_date: Date.new(2022, 1, 15),
-  description: 'These models were made for the sport of it. They are mid-engined roadsters that unite the sporting spirit of the legendary Porsche 718 with the sports car of tomorrow – and transfer it to the roads of today’s world. With one goal: to take the everyday out of every day. What is it that makes the 718 models so special? Their performance, their handling, their design, their generous amount of space with two luggage compartments. But most of all: a mid-engined layout that makes all this possible in the first place.',
+  description: 'These models were made for the sport of it.',
   photo: 'https://cdn.pixabay.com/photo/2016/04/01/12/16/car-1300629_1280.png',
   unit_price: 60000.0,
   purchase_fee: 600.0,
