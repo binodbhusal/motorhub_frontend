@@ -53,9 +53,9 @@ group :development do
   # gem "spring"
 end
 
+gem 'devise'
+gem 'devise-jwt'
 gem 'rack-cors'
 gem 'rswag'
 gem 'sprockets', '~> 4.0'
 gem 'will_paginate'
-gem 'devise'
-gem 'devise-jwt'

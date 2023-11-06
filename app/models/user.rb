@@ -8,7 +8,4 @@ class User < ApplicationRecord
          :jwt_authenticatable, jwt_revocation_strategy: self
   has_many :motors, foreign_key: :user_id, dependent: :destroy
   has_many :reservations, foreign_key: :user_id, dependent: :destroy
-def jwt_payload
-    super
-  end
 end

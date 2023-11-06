@@ -5,19 +5,19 @@ class Users::SessionsController < Devise::SessionsController
   def create
     user = User.find_by(email: params[:email])
 
-    if user && user.valid_password?(params[:password])
+    if user&.valid_password?(params[:password])
       # User's email and password are valid
       # Generate a JWT token and return it in the response
       token = generate_jwt_token(user)
-      
+
       render json: {
         status: {
           code: 200,
-          message: 'User signed in successfully',
+          message: 'User signed in successfully'
         },
         data: {
-          token: token,
-          user: user
+          token:,
+          user:
 
         }
       }, status: :ok
@@ -42,16 +42,16 @@ class Users::SessionsController < Devise::SessionsController
     # Example:
     payload = { sub: user.id, email: user.email }
     secret_key = Rails.application.credentials.fetch(:secret_key_base)
-    token = JWT.encode(payload, secret_key, 'HS256')
-    return token
+    JWT.encode(payload, secret_key, 'HS256')
   end
+
   def respond_to_on_destroy
     sign_out
     render json: {
-    status: {
-      code: 200,
-      message: 'Logout successfully'
-    }
+      status: {
+        code: 200,
+        message: 'Logout successfully'
+      }
     }, status: ok
   end
 end
