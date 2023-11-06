@@ -1,0 +1,138 @@
+
+  Rails.application.routes.draw do
+      devise_for :users, controllers: {
+        sessions: 'users/sessions'
+      }
+    end
+
+
+1 gem 'devise'
+ 2 gem 'devise-jwt'
+3. cors.rb
+ Rails.application.config.middleware.insert_before 0, Rack::Cors do
+  allow do
+    origins "*"
+
+    resource "*",
+      headers: :any,
+       methods: [:get, :post, :put, :patch, :delete, :options, :head],
+       expose: ["Authorization"]
+end
+end
+4. rails g devise:install
+5. devise.rb line 266   config.navigational_formats = []
+6 rails g devise user
+7 rails g devise:controllers users -c sessions registrations 
+8 rails g migration add_jti_to_users
+9 class AddJtiToUsers < ActiveRecord::Migration[7.0]
+  def change
+    add_column :users, :jti, :string, null: false
+    add_index :users, :jti, unique: true
+  end
+end
+10 rails db:migration_error
+11 class User < ApplicationRecord
+  include Devise::JWT::RevocationStrategies::JTIMatcher
+  12  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable,
+         :jwt_authenticatable, jwt_revocation_strategy: self
+13 def jwt_payload
+    super
+  end, add this method to user Model
+14  devise_for :users, controllers: {
+        sessions: 'users/sessions'
+        registrations: 'users/registrations'
+      }
+      Rails.application.credentials.fetch(:secret_key_base)
+rails c 
+      if any error delete master key and credentials.yml
+      then use this command: EDITOR=nano rails credentials:edit
+then control X 
+15 config.jwt do |jwt|
+    jwt.secret = Rails.application.credentials.fetch(:secret_key_base)
+    jwt.dispatch_requests = [
+      ['POST', %r{^users/sign_in$}]
+    ]
+    jwt.revocation_requests = [
+      ['DELETE', %r{^users/sign_out}]
+    ]
+    jwt.expiration_time = 120.minutes.to_i
+  end
+  after this error
+ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
+  16 config.session_store :cookie_store, key: '_interslice_session'
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use config.session_store, config.session_options
+    in application.rb
+
+    17 try sending delete request with authorization code from post man
+    displays respond_to undefined method
+    then writ this code: registration controller 
+    # frozen_string_literal: true
+
+class Users::RegistrationsController < Devise::RegistrationsController
+  respond_to :json
+  
+  private
+
+  def respond_with(resource, options = {})
+    if resource.persisted?
+      render json: {
+        status: { code: 200, message: 'Signed Up Successfully' },
+        data: resource
+      }, status: :ok
+    else
+      render json: {
+        status: { message: 'User could not be created successfully', errors: resource.errors.full_messages }, 
+        status: :unprocessable_entity
+      }
+    end
+  end
+end
+17 write code in session controller
+# frozen_string_literal: true
+
+class Users::SessionsController < Devise::SessionsController
+  respond_to :json
+  
+  private
+
+  def respond_with(resource, options = {})
+    if resource.persisted?
+      render json: {
+        status: { code: 200, message: 'Signed In Successfully', data: current_user }
+      }, status: :ok
+    else
+      render json: {
+        status: { message: 'User could not be signed in successfully', errors: resource.errors.full_messages }, 
+        status: :unprocessable_entity
+      }
+    end
+  end
+
+  def respond_to_on_destroy
+    jwt_payload = JWT.decode(request.headers['Authorization'].split(' ')[1], Rails.application.credentials.fetch(:secret_key_base)).first
+    current_user = User.find(jwt_payload['sub'])
+    if current_user
+      render json: {
+        status: 200,
+        message: "Signed out successfully"
+      }, status: :ok
+    else
+      render json: {
+        status: 401,
+        message: "User has no active session"
+      }, status: :unauthorized
+    end
+  end
+end
+
+
+------------
+{
+    "user": {
+        "email": "opi@testmail.com",
+        "password": "123456"
+    }
+}
+---------------------------------------
