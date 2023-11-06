@@ -45,4 +45,13 @@ class Users::SessionsController < Devise::SessionsController
     token = JWT.encode(payload, secret_key, 'HS256')
     return token
   end
+  def respond_to_on_destroy
+    sign_out
+    render json: {
+    status: {
+      code: 200,
+      message: 'Logout successfully'
+    }
+    }, status: ok
+  end
 end
