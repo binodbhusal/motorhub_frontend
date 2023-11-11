@@ -2,7 +2,7 @@ require 'swagger_helper'
 
 RSpec.describe 'User Sessions', type: :request do
   describe 'POST /users/sign_in' do
-    let(:user) { create(:user, email: 'user@example.com', password: 'password') }
+    let(:user) { create(:user) }
 
     context 'with valid email and password' do
       it 'logs in a user and returns a JWT token' do
