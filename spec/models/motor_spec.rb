@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Motor, type: :model do
   before :each do
-    @user = User.create(name: 'Salomon', role: 'admin')
-    @store_location = StoreLocation.create(city_name: 'Goma')
+    @user = create(:user)
+    @store_location = StoreLocation.create(city_name: 'Lisbon')
   end
   it 'is valid with valid attributes' do
     motor = Motor.new(user_id: @user.id, location_id: @store_location.id, unit_price: 10, purchase_fee: 10,
