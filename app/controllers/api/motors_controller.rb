@@ -3,7 +3,7 @@ class Api::MotorsController < ApplicationController
 
   # GET /motors
   def index
-    @motors = Motor.includes(:reservations, :store_location)
+    @motors = Motor.all
     @motors = @motors.where(brand_name: params[:brand_name]) if params[:brand_name].present?
     @motors = @motors.paginate(page: params[:page], per_page: params[:per_page] || 10)
     render json: @motors
@@ -12,16 +12,17 @@ class Api::MotorsController < ApplicationController
   # GET /motors/1
   def show
     @motor = Motor.find_by(id: params[:id])
-    render json: @motor
-  end
-
-  # GET /motors/new
-  def new
-    @motor = Motor.new
+    if @motor
+      render json: @motor
+    else
+      render json: { error: 'Motor not found' }, status: :not_found
+    end
   end
 
   # POST /motors
   def create
+    @errors = []
+
     # Get the city_name from the motor parameters
     city_name = params[:city_name]
 
@@ -31,6 +32,11 @@ class Api::MotorsController < ApplicationController
     if store_location.nil?
       # If it doesn't exist, create a new StoreLocation
       store_location = StoreLocation.create(city_name:)
+      if store_location.persisted?
+        render json: { message: 'StoreLocation created successfully', data: store_location }, status: :created
+      else
+        @errors.concat(store_location.errors.full_messages)
+      end
     end
 
     # Create a new motor and associate it with the store_location
@@ -42,7 +48,8 @@ class Api::MotorsController < ApplicationController
     else
       # Failed to create, log the errors
       Rails.logger.error(@motor.errors.full_messages.join(', '))
-      render json: { errors: @motor.errors.full_messages }, status: :unprocessable_entity
+      @errors.concat(@motor.errors.full_messages)
+      render json: { errors: @errors }, status: :unprocessable_entity
     end
   end
 
@@ -72,7 +79,9 @@ class Api::MotorsController < ApplicationController
   end
 
   def motor_params
-    params.require(:motor).permit(:brand_name, :model_no, :manufacturer, :manufacture_date, :description, :photo,
-                                  :unit_price, :purchase_fee, :finance_fee, :total_price, :city_name, :user_id)
+    params.require(:motor).permit(:brand_name, :model_no, :manufacturer,
+                                  :manufacture_date, :description, :photo,
+                                  :unit_price, :purchase_fee, :finance_fee,
+                                  :total_price, :city_name, :location_id, :user_id)
   end
 end
