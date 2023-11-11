@@ -11,12 +11,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
         }
       }
     else
+      Rails.logger.error("User not created successfully. Errors: #{resource.errors.full_messages}")
+
       render json: {
+
         status: {
-          message: 'User not created successfully', 
+          message: 'User not created successfully',
           errors: resource.errors.full_messages
         }
-        
       }, status: :unprocessable_entity
     end
   end
