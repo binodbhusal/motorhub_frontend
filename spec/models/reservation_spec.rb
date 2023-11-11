@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Reservation, type: :model do
   before :each do
-    @user = User.create(name: 'Salomon', role: 'admin')
-    @store_location = StoreLocation.create(city_name: 'Goma')
+    @user = User.create(name: 'Binod', role: 'admin')
+    @store_location = StoreLocation.create(city_name: 'Lisbon')
     @motor = Motor.new(user_id: @user.id, location_id: @store_location.id, unit_price: 10, purchase_fee: 10,
                        finance_fee: 10, total_price: 10, brand_name: 'Suzuki', model_no: 1234,
                        manufacturer: 'mitsubishi', manufacture_date: '2022-10-20', description: 'motor', photo: 'https://motor.jpeg')
