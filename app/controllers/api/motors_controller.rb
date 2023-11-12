@@ -63,9 +63,18 @@ class Api::MotorsController < ApplicationController
   end
 
   # DELETE /motors/1
-  def destroy
+ 
+
+def destroy
+  begin
+    @motor = Motor.find(params[:id])
     @motor.destroy
+    head :no_content
+  rescue ActiveRecord::RecordNotFound
+    render json: { error: 'Motor not found' }, status: :not_found
   end
+end
+
 
   private
 
