@@ -62,3 +62,4 @@ gem 'rack-cors'
 gem 'rswag'
 gem 'sprockets', '~> 4.0'
 gem 'will_paginate'
+
