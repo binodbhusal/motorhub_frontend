@@ -11,16 +11,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
         }
       }
     else
+      Rails.logger.error("User not created successfully. Errors: #{resource.errors.full_messages}")
+
       render json: {
+
         status: {
-          message: 'User not created successfully', errors: resource.errors.full_messages
-        },
-        response_status: :unprocessable_entity
-      }
+          message: 'User not created successfully',
+          errors: resource.errors.full_messages
+        }
+      }, status: :unprocessable_entity
     end
   end
 
   def sign_up_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :name)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end

@@ -8,8 +8,7 @@ Rails.application.routes.draw do
 
 
   namespace:api do
-    post 'sessions/create', to: 'sessions#sign_up'
-    post 'sessions/new', to: 'sessions#login'
+    
     resources :motors, only: [:index, :show, :create, :destroy]
     resources :users, only: [:index, :show, :create, :destroy] do
       resources :reservations, only: [:index, :show, :create, :update, :destroy]

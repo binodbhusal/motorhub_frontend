@@ -14,12 +14,16 @@ describe 'Store Locations API' do
       }
       response '201', 'store location created' do
         let(:store_location) { { city_name: 'Lisbon' } }
-        run_test!
+        run_test! do
+          expect(response).to have_http_status(:created)
+        end
       end
 
       response '422', 'invalid request' do
         let(:store_location) { { city_name: nil } } # Invalid request to trigger a 422 response
-        run_test!
+        run_test! do
+          expect(response).to have_http_status(:unprocessable_entity)
+        end
       end
     end
 

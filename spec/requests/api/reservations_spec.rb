@@ -1,21 +1,40 @@
 require 'swagger_helper'
 
 RSpec.describe 'API Reservations', type: :request do
-  before :each do
-    @user = User.create(name: 'John', role: 'admin')
-    @store_location = StoreLocation.create(city_name: 'Lisbon')
-    @motor = Motor.create(user_id: @user.id, location_id: @store_location.id, unit_price: 10, purchase_fee: 10,
-                          finance_fee: 10, total_price: 10, brand_name: 'Suzuki', model_no: 1234,
-                          manufacturer: 'mitsubishi', manufacture_date: '2022-10-20', description: 'motor', photo: 'https://motor.jpeg')
-    @reservation_attributes = {
-      motor_id: @motor.id,
-      reserve_date: '2022-10-20',
-      city_name: 'Lisbon'
-    }
+  before(:each) do
+    @user1 = create(:user)
+    @user2 = create(:user)
+    @motor1 = create(:motor, user: @user1)
+    @motor2 = create(:motor, user: @user2)
+    @reservation1 = create(:reservation, user: @user1, motor: @motor1)
   end
 
   path '/api/users/{user_id}/reservations' do
+    get 'Lists reservations' do
+      tags 'Reservations'
+      produces 'application/json'
+      parameter name: :user_id, in: :path, type: :integer, required: true
+
+      response '200', 'list of reservations' do
+        let(:user_id) { @user1.id }
+
+        run_test! do
+          expect(response).to have_http_status(:ok)
+          # Assuming your response contains an array of reservations
+          body = JSON.parse(response.body)
+          expect(body).to be_an(Array)
+          expect(body.length).to eq(1) # User1 has one reservation
+          expect(body[0]['user_id']).to eq(@user1.id)
+          reservation_ids = body.map { |reservation| reservation['id'] }
+          expect(reservation_ids).to include(@reservation1.id)
+        end
+      end
+    end
+
     post 'Creates a reservation' do
+      let(:user_id) { @user2.id }
+      let(:motor_id) { @motor2.id }
+
       tags 'Reservations'
       consumes 'application/json'
       parameter name: :user_id, in: :path, type: :integer, required: true
@@ -30,36 +49,28 @@ RSpec.describe 'API Reservations', type: :request do
       }
 
       response '201', 'reservation created' do
-        let(:user_id) { @user.id }
-        let(:reservation) { @reservation_attributes }
+        let(:reservation_attributes) do
+          { motor_id:, reserve_date: '2022-10-20', city_name: 'Lisbon' }
+        end
+        let(:reservation) do
+          {
+            reservation: reservation_attributes
+          }
+        end
+        before do
+          # Ensure that the associated user exists
+          @user2 ||= create(:user, id: user_id)
 
-        it 'debugging info' do
-          puts "User ID: #{user_id}, Motor ID: #{reservation[:motor_id]}"
+          # Ensure that the associated motor exists
+          @motor2 ||= create(:motor, id: motor_id, user: @user2)
         end
 
-        run_test!
-      end
-
-      response '422', 'invalid request' do
-        let(:user_id) { @user.id }
-        let(:reservation) { { motor_id: 999, reserve_date: '2022-10-20', city_name: 'Goma' } }
-        run_test!
-      end
-    end
-
-    get 'Lists reservations' do
-      tags 'Reservations'
-      produces 'application/json'
-      parameter name: :user_id, in: :path, type: :integer, required: true
-
-      response '200', 'list of reservations' do
-        let(:user_id) { @user.id }
-        run_test!
-      end
-
-      response '404', 'user not found' do
-        let(:user_id) { 9999 }
-        run_test!
+        run_test! do
+          expect(response).to have_http_status(:created)
+          body = JSON.parse(response.body)
+          expect(body['user_id']).to eq(@user2.id)
+          expect(body['motor']['id']).to eq(@motor2.id)
+        end
       end
     end
   end

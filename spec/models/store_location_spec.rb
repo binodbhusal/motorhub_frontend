@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe StoreLocation, type: :model do
   it 'is valid with valid attributes' do
-    store_location = StoreLocation.new(city_name: 'Goma')
+    store_location = StoreLocation.new(city_name: 'Lisbon')
     expect(store_location).to be_valid
   end
 
