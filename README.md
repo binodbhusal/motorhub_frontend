@@ -15,8 +15,6 @@
   - [Tech Stack ](#tech-stack-)
   - [Key Features ](#key-features-)
   - [🚀 Live Demo](#live-demo)
-  - [Kanban Board](#kanban)
-  - [Video Presentation](#video-presentation)
 - [💻 Getting Started ](#-getting-started-)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
@@ -78,9 +76,7 @@ The Motorhub - Online Motor Reservation System is a web application designed to 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
  <img src="https://github.com/binodbhusal/final_capstone_backend/blob/dev/app/ER_diagram/kanban_screenshot.jpg" width="600"  height="auto" />
-## Video Presentation <a name="video-presentation"></a>
 
-Click on this [Coming Soon](#) to view the video walkthrough of this project
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -132,27 +128,28 @@ N/A
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
+### 👤 **Binod Bhusal**
+
+- GitHub: [@binodbhusal](https://github.com/binodbhusal)
+- Twitter: [@twitter](https://twitter.com/Binod_ironLad)
+- LinkedIn: [@linkedin](https://www.linkedin.com/in/binodbhusal/)
 
 ### 👤 **Dieum Akonkwa**:
 
 - GitHub: [@dieum512](https://github.com/dieum512)
 - Twitter: [@twitter](https://twitter.com/dieumakonkw)
 - LinkedIn: [@linkedin]()
-### 👤 **Binod Bhusal**
-
-- GitHub: [@binodbhusal](https://github.com/binodbhusal)
-- Twitter: [@twitter](https://twitter.com/Binod_ironLad)
-- LinkedIn: [@linkedin](https://www.linkedin.com/in/binodbhusal/)
-### 👤 **Alijan Rahimi**
-
-- GitHub: [@rahimialijan](https://github.com/rahimialijan)
-- Twitter: [@twitter](https://twitter.com/AlijanRahimi10)
-- LinkedIn: [@linkedin](https://www.linkedin.com/in/alijan-rahimi-18389ab3/)
 
 ### 👤 **Salomon Tshobohwa**:
 
 - GitHub: [@Tshobohwa ](https://github.com/Tshobohwa)
 - LinkedIn: [@linkedin](https://www.linkedin.com/in/tshobohwasalomon/)
+
+### 👤 **Alijan Rahimi**
+
+- GitHub: [@rahimialijan](https://github.com/rahimialijan)
+- Twitter: [@twitter](https://twitter.com/AlijanRahimi10)
+- LinkedIn: [@linkedin](https://www.linkedin.com/in/alijan-rahimi-18389ab3/)
 
 # 🔭 Future Features:
 
