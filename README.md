@@ -77,14 +77,6 @@ The Motorhub - Online Motor Reservation System is a web application designed to 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🎬 Kanban Board <a id="kanban"></a>
-
-Link to the [Kanban Board](https://github.com/users/binodbhusal/projects/4/views/1)
-
-All 4 Authors have been contributing to this project from start to finish
-
-You can find the initial snapshot and setup of the Kanban board [here](https://github.com/binodbhusal/final_capstone_backend/issues/8).
-
  <img src="https://github.com/binodbhusal/final_capstone_backend/blob/dev/app/ER_diagram/kanban_screenshot.jpg" width="600"  height="auto" />
 ## Video Presentation <a name="video-presentation"></a>
 
@@ -146,18 +138,16 @@ N/A
 - GitHub: [@dieum512](https://github.com/dieum512)
 - Twitter: [@twitter](https://twitter.com/dieumakonkw)
 - LinkedIn: [@linkedin]()
-
-### 👤 **Alijan Rahimi**
-
-- GitHub: [@rahimialijan](https://github.com/rahimialijan)
-- Twitter: [@twitter](https://twitter.com/AlijanRahimi10)
-- LinkedIn: [@linkedin](https://www.linkedin.com/in/alijan-rahimi-18389ab3/)
-
 ### 👤 **Binod Bhusal**
 
 - GitHub: [@binodbhusal](https://github.com/binodbhusal)
 - Twitter: [@twitter](https://twitter.com/Binod_ironLad)
 - LinkedIn: [@linkedin](https://www.linkedin.com/in/binodbhusal/)
+### 👤 **Alijan Rahimi**
+
+- GitHub: [@rahimialijan](https://github.com/rahimialijan)
+- Twitter: [@twitter](https://twitter.com/AlijanRahimi10)
+- LinkedIn: [@linkedin](https://www.linkedin.com/in/alijan-rahimi-18389ab3/)
 
 ### 👤 **Salomon Tshobohwa**:
 
@@ -166,8 +156,7 @@ N/A
 
 # 🔭 Future Features:
 
-- Proper authentication
-- Authorization
+- Add online payment  system for purchases.
 
 ## 🤝 Contributing <a name="contributing"></a>
 
