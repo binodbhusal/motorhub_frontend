@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import axios from '../../api/axios';
-
+import Motor from '../motor/Motor';
 
 const LOGIN_URL = 'http://localhost:3000/users/sign_in';
 
@@ -55,7 +55,7 @@ const Login = () => {
   };
 
   if (success) {
-    return <MotorList />;
+    return <Motor />;
   }
 
   return (

@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from 'react';
 
-import { destroySession, TOKENKEY } from '../../util/auth';
+import { destroySession, TOKENKEY } from '../util/auth';
 
 const Log = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
