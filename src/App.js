@@ -6,8 +6,8 @@ import AddMotor from './components/AddMotor/AddMotor';
 import DeleteMotor from './components/DeleteMotor/DeleteMotor';
 import NoMatch from './NoMatch/NoMatch';
 import MotorDetails from './components/details/MotorDetails';
-import Login from './components/Login/Login';
-import SignUp from './components/SignUp/SignUp';
+import Login from './components/user/Login';
+import Signup from './components/user/Signup';
 import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
 import Reservation from './components/Reserve/Reservation';
 import ReserveConfirm from './components/Reserve/ReserveConfirm';
@@ -18,7 +18,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="login" element={<Login />} />
-          <Route path="sign_up" element={<SignUp />} />
+          <Route path="sign_up" element={<Signup />} />
           <Route element={<PrivateRoutes />}>
             <Route path="/" element={<MainPage />} />
             <Route path="/Reserve" element={<Reservation />} />
