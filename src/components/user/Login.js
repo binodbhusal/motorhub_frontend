@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import axios from '../../api/axios';
-import Motor from '../motor/Motor';
+import MainPage from '../mainpage/MainPage';
 
 const LOGIN_URL = 'http://localhost:3000/users/sign_in';
 
@@ -55,7 +55,7 @@ const Login = () => {
   };
 
   if (success) {
-    return <Motor />;
+    return <MainPage />;
   }
 
   return (
@@ -125,7 +125,7 @@ const Login = () => {
         Need an Account?
         <br />
         <span className="line bg-secondary px-2 rounded-lg">
-          <a href="/SignUp">Sign Up</a>
+          <a href="SignUp">Sign Up</a>
         </span>
       </p>
     </section>

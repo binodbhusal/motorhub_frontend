@@ -18,17 +18,17 @@ function App() {
       <Router>
         <Routes>
           <Route path="login" element={<Login />} />
-          <Route path="sign_up" element={<Signup />} />
-          <Route element={<PrivateRoutes />}>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/Reserve" element={<Reservation />} />
-            <Route path="/MyReservations" element={<MyReservations />} />
-            <Route path="/AddMotor" element={<AddMotor />} />
-            <Route path="/DeleteMotor" element={<DeleteMotor />} />
-            <Route path="/reserveform/:id" element={<Reservation />} />
-            <Route path="/reserveconfirm" element={<ReserveConfirm />} />
-            <Route path="/MotorDetails/:id" element={<MotorDetails />} />
-          </Route>
+          <Route path="SignUp" element={<Signup />} />
+
+          <Route path="/" element={<MainPage />} />
+          <Route path="/Reserve" element={<Reservation />} />
+          <Route path="/MyReservations" element={<MyReservations />} />
+          <Route path="/AddMotor" element={<AddMotor />} />
+          <Route path="/DeleteMotor" element={<DeleteMotor />} />
+          <Route path="/reserveform/:id" element={<Reservation />} />
+          <Route path="/reserveconfirm" element={<ReserveConfirm />} />
+          <Route path="/MotorDetails/:id" element={<MotorDetails />} />
+
           <Route path="*" element={<NoMatch />} />
         </Routes>
       </Router>
