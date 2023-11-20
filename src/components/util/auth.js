@@ -2,16 +2,26 @@ export const TOKENKEY = 'token';
 export const USERKEY = 'user';
 
 export const setToken = (token) => {
-  localStorage.setItem(TOKENKEY, JSON.stringify(token));
+  if (token) {
+    localStorage.setItem(TOKENKEY, JSON.stringify(token));
+  }
 };
 
 export const setUser = (user) => {
-  localStorage.setItem(USERKEY, JSON.stringify(user));
+  if (user) {
+    localStorage.setItem(USERKEY, JSON.stringify(user));
+  }
 };
 
 export const getToken = () => {
   const storedToken = localStorage.getItem(TOKENKEY);
-  return storedToken ? JSON.parse(storedToken) : null;
+  try {
+    return storedToken ? JSON.parse(storedToken) : null;
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('Error parsing token:', error);
+    return null;
+  }
 };
 
 export const getUser = () => {
@@ -20,8 +30,10 @@ export const getUser = () => {
 };
 
 export const storeSession = (user, token) => {
-  setUser(user);
-  setToken(token);
+  if (user && token) {
+    setUser(user);
+    setToken(token);
+  }
 };
 
 export const destroySession = () => {
