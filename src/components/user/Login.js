@@ -1,21 +1,24 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+
 import axios from '../../api/axios';
-import MainPage from '../mainpage/MainPage';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const LOGIN_URL = 'http://localhost:3000/users/sign_in';
 
 const Login = () => {
   const emailRef = useRef();
   const errRef = useRef();
-
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
   const [showPwd, setShowPwd] = useState(false);
   const [errMsg, setErrMsg] = useState('');
-  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     emailRef.current.focus();
@@ -29,34 +32,46 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(LOGIN_URL, formData, {
-        headers: {
-          'Content-Type': 'application/json',
+      // Create a JSON object from formData
+      const jsonData = JSON.stringify({
+        user: {
+          email: formData.email,
+          password: formData.password,
         },
       });
 
-      const { token } = response.data;
-      localStorage.setItem('token', token);
-
-      setFormData({ email: '', password: '' });
-      setSuccess(true);
-    } catch (err) {
-      if (!err?.response) {
-        setErrMsg('No Server Response');
-      } else if (err.response?.status === 400) {
-        setErrMsg('Missing email or password');
-      } else if (err.response?.status === 401) {
-        setErrMsg('Unauthorized');
+      // Make a POST request using Axios with the JSON data
+      const response = await axios.post(
+        LOGIN_URL,
+        jsonData,
+        {
+          headers: {
+            'Content-Type': 'application/json', // Set the content type to JSON
+          },
+        },
+      );
+      // console.log(response);
+      // Handle the response as needed
+      if (response.status === 200) {
+        const token = response.headers.get('Authorization');
+        // setMessage('Account created successfully'); // Set message to true
+        // Clear the input field
+        localStorage.setItem('token', token);
+        setFormData({
+          email: '',
+          password: '',
+        });
+        navigate('/');
+        toast.success('Login successful.', { type: toast.TYPE.SUCCESS });
       } else {
-        setErrMsg('Login Failed');
+        navigate('/login');
+        toast.error('Please check your email and password', { type: toast.TYPE.ERROR });
       }
-      errRef.current.focus();
+    } catch (error) {
+      navigate('/login');
+      toast.error('Please check your email and password', { type: toast.TYPE.ERROR });
     }
   };
-
-  if (success) {
-    return <MainPage />;
-  }
 
   return (
     <section className="log-section">
