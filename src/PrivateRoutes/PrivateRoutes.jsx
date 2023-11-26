@@ -2,7 +2,10 @@ import { Navigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 export default function PrivateRoute({ element }) {
-  const isAuthenticated = localStorage.getItem('token');
+  const token = localStorage.getItem('token');
+  const isAuthenticated = !!token && token.startsWith('Bearer ');
+  console.log('IsAuthenticated:', isAuthenticated);
+
   return isAuthenticated ? element : <Navigate to="/login" replace />;
 }
 
