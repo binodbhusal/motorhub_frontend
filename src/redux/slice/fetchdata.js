@@ -7,7 +7,7 @@ const API_BASE_URL = 'http://localhost:3000/api/motors';
 export const fetchMotoData = createAsyncThunk(
   'motor/fetchMotoData',
   async () => {
-    const response = await fetch(`${API_BASE_URL}/index`);
+    const response = await fetch(`${API_BASE_URL}`);
     if (!response.ok) {
       throw new Error('Failed to fetch motors data');
     }
@@ -20,10 +20,13 @@ export const fetchMotoData = createAsyncThunk(
 export const createMotor = createAsyncThunk(
   'motor/createMotor',
   async (motorData) => {
+    const token = localStorage.getItem('token');
+    console.log('Token:', token);
     const response = await fetch(API_BASE_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: token,
       },
       body: JSON.stringify(motorData),
     });
