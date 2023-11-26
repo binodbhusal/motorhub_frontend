@@ -16,9 +16,17 @@ export const createLocation = createAsyncThunk(
   'location/creatlocation',
   async (locationData, { rejectWithValue }) => {
     try {
+      const token = localStorage.getItem('token');
+
       const response = await axios.post(
         'http://localhost:3000/api/stores_location',
         locationData,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: token,
+          },
+        },
       );
       return response.data;
     } catch (error) {
