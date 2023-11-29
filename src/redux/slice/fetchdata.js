@@ -40,7 +40,12 @@ export const createMotor = createAsyncThunk(
 export const createReservation = createAsyncThunk('reserve',
   async ({ reserveData, userId }, { rejectWithValue }) => {
     try {
-      const response = await axios.post(`http://localhost:3000/api/users/${userId}/reservations`, reserveData);
+      const token = localStorage.getItem('token');
+      const response = await axios.post(`http://localhost:3000/api/users/${userId}/reservations`, reserveData, {
+        headers: {
+          Authorization: `${token}`,
+        },
+      });
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -50,7 +55,12 @@ export const createReservation = createAsyncThunk('reserve',
 export const fetchReservations = createAsyncThunk('reservations',
   async (userId) => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/users/${userId}/reservations`);
+      const token = localStorage.getItem('token');
+      const response = await axios.get(`http://localhost:3000/api/users/${userId}/reservations`, {
+        headers: {
+          Authorization: `${token}`,
+        },
+      });
       return response.data;
     } catch (error) {
       throw error.message;
