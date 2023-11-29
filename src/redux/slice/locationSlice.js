@@ -3,8 +3,14 @@ import axios from 'axios';
 
 export const fetchLocations = createAsyncThunk('citynames', async () => {
   try {
+    const token = localStorage.getItem('token');
     const response = await axios.get(
-      'http://localhost:3000/api/stores_location',
+      'http://localhost:3000/api/stores_location', {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `${token}`,
+        },
+      },
     );
     return response.data;
   } catch (error) {
@@ -24,7 +30,7 @@ export const createLocation = createAsyncThunk(
         {
           headers: {
             'Content-Type': 'application/json',
-            Authorization: token,
+            Authorization: `${token}`,
           },
         },
       );
