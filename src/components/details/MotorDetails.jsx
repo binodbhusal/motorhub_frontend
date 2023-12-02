@@ -8,14 +8,16 @@ import './details.scss';
 
 const MotorDetails = () => {
   const dispatch = useDispatch();
+  const token = localStorage.getItem('token');
+  console.log('Token moto details:', token);
   const { motorDetail } = useSelector((state) => state.motorDetails);
   const { id } = useParams();
   const { search } = useLocation();
   const queryParams = new URLSearchParams(search);
   const userId = queryParams.get('user_id');
   useEffect(() => {
-    dispatch(fetchMotoDetailData(id));
-  }, [dispatch, id]);
+    dispatch(fetchMotoDetailData(id, token));
+  }, [dispatch, id, token]);
 
   if (motorDetail === null) {
     return <p>Loading...</p>;
