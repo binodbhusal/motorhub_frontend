@@ -7,7 +7,7 @@ import NavigationPanel from '../navigation/NavigationPanel';
 import './AddMotor.scss';
 
 const AddMotor = () => {
-  const { user } = useSelector((store) => store.user);
+  const userId = useSelector((state) => state.user.userId);
   const dispatch = useDispatch();
   const initialLocationData = {
     city_name: '',
@@ -25,7 +25,7 @@ const AddMotor = () => {
     purchase_fee: '',
     finance_fee: '',
     total_price: '',
-    user_id: user.id,
+    user_id: userId,
   };
   const [locationData, setLocationData] = useState(initialLocationData);
   const [motorData, setMotorData] = useState(initialMotorData);
