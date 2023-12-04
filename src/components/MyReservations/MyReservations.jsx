@@ -6,14 +6,15 @@ import NavigationPanel from '../navigation/NavigationPanel';
 import './myReservations.css';
 
 const MyReservations = () => {
+  const token = localStorage.getItem('token');
+
   const dispatch = useDispatch();
-  const { user } = useSelector((store) => store.user);
-  const userId = user.id;
+  const userId = useSelector((state) => state.user.userId);
   const { reserves, isLoading, isError } = useSelector((state) => state.reserve);
 
   useEffect(() => {
     dispatch(fetchReservations(userId));
-  }, [dispatch, userId]);
+  }, [dispatch, userId, token]);
 
   let reserveList;
   if (isLoading) {
@@ -30,31 +31,35 @@ const MyReservations = () => {
           <div className="second-cont">
             <h1 className="list-reserved-title">Reserved List:</h1>
             <ul>
-              {reserves.map((myreserve) => (
-                <div key={myreserve.id} className="single-reservation-cont">
-                  <li key={myreserve.id}>
-                    <p>
-                      <span>CityName:</span>
-                      {' '}
-                      <span className="bold-reservaiton">{myreserve.city_name}</span>
-                    </p>
-                    <p>
-                      <span>Reserve Date:</span>
-                      {' '}
-                      <span className="bold-reservaiton">{myreserve.reserve_date}</span>
-                    </p>
-                    <p>
-                      <span>Reserve Brand:</span>
-                      {' '}
-                      <span className="bold-reservaiton brand-name">
-                        {myreserve.motor ? myreserve.motor.brand_name : 'N/A'}
+              {Array.isArray(reserves) ? (
+                reserves.map((myreserve) => (
+                  <div key={myreserve.id} className="single-reservation-cont">
+                    <li key={myreserve.id}>
+                      <p>
+                        <span>CityName:</span>
                         {' '}
-                        {myreserve.motor ? myreserve.motor.model_no : 'N/A'}
-                      </span>
-                    </p>
-                  </li>
-                </div>
-              ))}
+                        <span className="bold-reservation">{myreserve.city_name}</span>
+                      </p>
+                      <p>
+                        <span>Reserve Date:</span>
+                        {' '}
+                        <span className="bold-reservation">{myreserve.reserve_date}</span>
+                      </p>
+                      <p>
+                        <span>Reserve Brand:</span>
+                        {' '}
+                        <span className="bold-reservation brand-name">
+                          {myreserve.motor ? myreserve.motor.brand_name : 'N/A'}
+                          {' '}
+                          {myreserve.motor ? myreserve.motor.model_no : 'N/A'}
+                        </span>
+                      </p>
+                    </li>
+                  </div>
+                ))
+              ) : (
+                <p>No reservations found</p>
+              )}
             </ul>
           </div>
         </div>

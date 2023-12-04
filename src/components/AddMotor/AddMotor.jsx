@@ -7,7 +7,7 @@ import NavigationPanel from '../navigation/NavigationPanel';
 import './AddMotor.scss';
 
 const AddMotor = () => {
-  const { user } = useSelector((store) => store.user);
+  const userId = useSelector((state) => state.user.userId);
   const dispatch = useDispatch();
   const initialLocationData = {
     city_name: '',
@@ -25,7 +25,7 @@ const AddMotor = () => {
     purchase_fee: '',
     finance_fee: '',
     total_price: '',
-    user_id: user.id,
+    user_id: userId,
   };
   const [locationData, setLocationData] = useState(initialLocationData);
   const [motorData, setMotorData] = useState(initialMotorData);
@@ -57,14 +57,16 @@ const AddMotor = () => {
 
   const handleCombinedSubmit = (e) => {
     e.preventDefault();
+    const token = localStorage.getItem('token');
+
     const combinedData = {
       stores_location: {
         city_name: locationData.city_name,
       },
       motor: motorData,
     };
-    dispatch(createLocation(combinedData.stores_location));
-    dispatch(createMotor(combinedData.motor));
+    dispatch(createLocation(combinedData.stores_location, token));
+    dispatch(createMotor(combinedData.motor, token));
     setLocationData(initialLocationData);
     setMotorData(initialMotorData);
   };

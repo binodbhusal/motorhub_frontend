@@ -1,11 +1,13 @@
-import { useSelector } from 'react-redux';
-import { Outlet, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const PrivateRoutes = () => {
-  const user = useSelector((store) => store.user);
-  return (
-    user.logedIn ? <Outlet /> : <Navigate to="/login" />
-  );
+export default function PrivateRoute({ element }) {
+  const token = localStorage.getItem('token');
+  const isAuthenticated = !!token && token.startsWith('Bearer ');
+
+  return isAuthenticated ? element : <Navigate to="/login" replace />;
+}
+
+PrivateRoute.propTypes = {
+  element: PropTypes.node.isRequired,
 };
-
-export default PrivateRoutes;

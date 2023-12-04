@@ -5,15 +5,18 @@ import { fetchCityname } from '../../redux/slice/citySlice';
 import { createReservation } from '../../redux/slice/fetchdata';
 import MobileNavbar from '../navigation/MobileNavbar';
 import NavigationPanel from '../navigation/NavigationPanel';
+
 import './Reserve.scss';
 
 const Reservation = () => {
+  const token = localStorage.getItem('token');
   const { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { motorDetail } = useSelector((state) => state.motorDetails);
   const { citynames } = useSelector((state) => state.cityname);
-  const { user } = useSelector((store) => store.user);
+  const userData = useSelector((state) => state.user.userId);
+  const userId = userData;
   const [formData, setFormData] = useState({
     reserve_date: '',
     city_name: '',
@@ -23,7 +26,7 @@ const Reservation = () => {
 
   useEffect(() => {
     dispatch(fetchCityname());
-  }, [dispatch]);
+  }, [dispatch], token);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -37,13 +40,13 @@ const Reservation = () => {
     }
 
     const reservationData = {
-      user_id: user.id,
+      user_id: userId,
       motor_id: motorDetail.id,
       reserve_date: formData.reserve_date,
       city_name: formData.city_name,
     };
 
-    dispatch(createReservation({ reserveData: reservationData, userId: user.id }))
+    dispatch(createReservation({ reserveData: reservationData, userId }))
       .then(() => {
         navigate('/reserveconfirm');
       })
@@ -82,13 +85,7 @@ const Reservation = () => {
               </p>
             </div>
             )}
-            {user.id !== null && (
-            <div>
-              <h2>
-                {user.name}
-              </h2>
-            </div>
-            )}
+
             <form onSubmit={handleSubmit}>
               <div className="date-selector">
                 <label htmlFor="reserve_date">
@@ -99,11 +96,12 @@ const Reservation = () => {
                     name="reserve_date"
                     value={formData.reserve_date}
                     onChange={handleChange}
+                    required
                   />
                 </label>
               </div>
               <div>
-                <select id="city_name" name="city_name" value={formData.city_name} onChange={handleChange} className="select-city-btn">
+                <select id="city_name" name="city_name" value={formData.city_name} onChange={handleChange} className="select-city-btn" required>
                   <option value="">Select a city</option>
                   {citynames.map((city) => (
                     <option key={city.id} value={city.city_name}>

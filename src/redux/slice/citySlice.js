@@ -5,7 +5,12 @@ const baseApi = 'http://localhost:3000/api/stores_location';
 
 export const fetchCityname = createAsyncThunk('citynames', async () => {
   try {
-    const response = await axios.get(baseApi);
+    const token = localStorage.getItem('token');
+    const response = await axios.get(baseApi, {
+      headers: {
+        Authorization: `${token}`,
+      },
+    });
     return response.data;
   } catch (error) {
     throw error.message;

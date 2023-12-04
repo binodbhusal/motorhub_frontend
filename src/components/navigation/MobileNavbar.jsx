@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import './MobileNabar.scss';
 import { NavLink } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+
 import logo from '../../assets/logo.png';
-import { logOut } from '../../redux/slice/userSlice';
 
 const links = [
   { path: '/', text: 'Motors' },
@@ -16,10 +15,6 @@ const links = [
 const MobileNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [displayNavbar, setDisplayNavbar] = useState(false);
-  const dispatch = useDispatch();
-  const logOutHandler = () => {
-    dispatch(logOut());
-  };
 
   const handleToggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -47,28 +42,23 @@ const MobileNavbar = () => {
             </li>
           ))}
 
-          <li className="nav-link">
-            <a className="navlink-class nav-button" onClick={logOutHandler}>
-              <p className="nav-item">LOG-OUT</p>
-            </a>
-          </li>
         </ul>
 
         <div className="social-media-container">
-          <a href="#">
+          <a href="#" aria-label="Facebook">
             <i className="bi bi-facebook" />
           </a>
-          <a href="#">
+          <a href="#" aria-label="Twitter">
             <i className="bi bi-twitter" />
           </a>
 
-          <a href="#">
+          <a href="#" aria-label="Twitter">
             <i className="bi bi-twitter" />
           </a>
-          <a href="#">
+          <a href="#" aria-label="GitHub">
             <i className="bi bi-github" />
           </a>
-          <a href="#">
+          <a href="#" aria-label="Instagram">
             <i className="bi bi-instagram" />
           </a>
         </div>
