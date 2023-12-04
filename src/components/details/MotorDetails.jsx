@@ -9,7 +9,6 @@ import './details.scss';
 const MotorDetails = () => {
   const dispatch = useDispatch();
   const token = localStorage.getItem('token');
-  console.log('Token moto details:', token);
   const { motorDetail } = useSelector((state) => state.motorDetails);
   const { id } = useParams();
   const { search } = useLocation();
