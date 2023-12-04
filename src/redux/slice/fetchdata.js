@@ -21,7 +21,6 @@ export const createMotor = createAsyncThunk(
   'motor/createMotor',
   async (motorData) => {
     const token = localStorage.getItem('token');
-    console.log('Token:', token);
     const response = await fetch(API_BASE_URL, {
       method: 'POST',
       headers: {
