@@ -29,14 +29,14 @@ const Login = () => {
   useEffect(() => {
     setErrMsg('');
   }, [formData.email, formData.password]);
-  const fetchUserbyEmail = async (email) => {
-    try {
-      const response = await axios.get(`http://localhost:3000/api/users?email=${email}`);
-      return response.data;
-    } catch (error) {
-      throw new Error('Error fetching user data');
-    }
-  };
+  // const fetchUserbyEmail = async (email) => {
+  //   try {
+  //     const response = await axios.get(`http://localhost:3000/api/users?email=${email}`);
+  //     return response.data;
+  //   } catch (error) {
+  //     throw new Error('Error fetching user data');
+  //   }
+  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -59,25 +59,14 @@ const Login = () => {
           },
         },
       );
-      // console.log(response);
-      // Handle the response as needed
       if (response.status === 200) {
         const token = response.headers.get('Authorization');
 
-        console.log('stored token:', token);
-        // setMessage('Account created successfully'); // Set message to true
-        // Clear the input field
         localStorage.setItem('token', token);
-        const userData = await fetchUserbyEmail(formData.email);
-        console.log('userDate', userData);
-        if (Array.isArray(userData) && userData.length > 0) {
-          const userId = userData[0].id;
 
-          console.log('User ID:', userId); // Log specifically the user ID property
-          dispatch(setUser(userId));
-        } else {
-          console.log('User ID not found or undefined');
-        }
+        const userId = response.data.status.data.id;
+
+        dispatch(setUser(userId));
 
         setFormData({
           email: '',
