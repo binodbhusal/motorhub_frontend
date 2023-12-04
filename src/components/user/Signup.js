@@ -52,69 +52,98 @@ const Signup = () => {
   };
 
   return (
-    <section className="log-section">
-      <p className={errMsg ? 'errmsg' : 'offscreen'} aria-live="assertive">
-        {errMsg}
-      </p>
-      <h1 className="text-xl">Register</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">
-          Username:
-          <input
-            type="text"
-            id="username"
-            autoComplete="off"
-            onChange={(e) => setUser(e.target.value)}
-            value={user}
-            required
-          />
-        </label>
-        <label htmlFor="email">
-          Email:
-          <input
-            type="email"
-            id="email"
-            autoComplete="off"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-            required
-          />
-        </label>
-        <label htmlFor="password">
-          Password:
-          <input
-            type="password"
-            id="password"
-            onChange={(e) => setPwd(e.target.value)}
-            value={pwd}
-            required
-          />
-        </label>
-        <label htmlFor="confirm_pwd">
-          Confirm Password:
-          <input
-            type="password"
-            id="confirm_pwd"
-            onChange={(e) => setMatchPwd(e.target.value)}
-            value={matchPwd}
-            required
-          />
-        </label>
-        <button
-          type="submit"
-          disabled={!user || !email || !pwd || !matchPwd || pwd !== matchPwd}
-        >
-          Sign Up
-        </button>
-      </form>
+    <section className="min-h-screen flex items-center justify-center md:bg-l-green">
+      <div className="bg-grey rounded-2xl flex md:p-6 ">
+        <div className="mx-2 md:p-6 md:ml-6">
+          {' '}
+          <p className={errMsg ? 'errmsg' : 'offscreen'} aria-live="assertive">
+            {errMsg}
+          </p>
+          <h4 className="text-green mb-4 text-xl font-semibold mt-3">Please Register</h4>
+          <form onSubmit={handleSubmit}>
 
-      <p>
-        Already registered?
-        <br />
-        <span className="line bg-secondary px-2 rounded-lg">
-          <a href="/LogIn">Sign In</a>
-        </span>
-      </p>
+            <div>
+              <label htmlFor="username">
+                Username
+                <div>
+                  <input
+                    type="text"
+                    id="username"
+                    autoComplete="off"
+                    onChange={(e) => setUser(e.target.value)}
+                    value={user}
+                    required
+                    className="h-10 w-[305px] rounded-lg border-2 outline-0 focus:px-2"
+                  />
+                </div>
+
+              </label>
+            </div>
+            <div>
+              <label htmlFor="email">
+                Email
+                <div>
+                  <input
+                    type="email"
+                    id="email"
+                    autoComplete="off"
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                    required
+                    className="h-10 w-[305px] rounded-lg border-2 outline-0 focus:px-2"
+
+                  />
+                </div>
+              </label>
+            </div>
+            <div>
+              <label htmlFor="password">
+                Password:
+                <div>
+                  <input
+                    type="password"
+                    id="password"
+                    onChange={(e) => setPwd(e.target.value)}
+                    value={pwd}
+                    required
+                    className="h-10 w-[305px] rounded-lg border-2 outline-0 focus:px-2"
+                  />
+                </div>
+              </label>
+            </div>
+            <div>
+              <label htmlFor="confirm_pwd">
+                Confirm Password:
+                <div>
+                  <input
+                    type="password"
+                    id="confirm_pwd"
+                    onChange={(e) => setMatchPwd(e.target.value)}
+                    value={matchPwd}
+                    required
+                    className="h-10 w-[305px] rounded-lg border-2 outline-0 focus:px-2"
+                  />
+                </div>
+              </label>
+            </div>
+            <button
+              type="submit"
+              disabled={!user || !email || !pwd || !matchPwd || pwd !== matchPwd}
+              className="bg-purple text-yellow-50 mt-3 text-white w-[95%] h-10  rounded-lg mx-1"
+            >
+              Sign Up
+            </button>
+          </form>
+
+          <p className="mt-2 text-green">
+            Already registered?
+            <br />
+            <span className="text-blue bg-white p-1 px-3 rounded-lg">
+              <a href="/LogIn">Sign In</a>
+            </span>
+          </p>
+        </div>
+      </div>
     </section>
   );
 };
