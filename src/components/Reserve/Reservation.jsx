@@ -15,9 +15,8 @@ const Reservation = () => {
   const dispatch = useDispatch();
   const { motorDetail } = useSelector((state) => state.motorDetails);
   const { citynames } = useSelector((state) => state.cityname);
-  const userId = useSelector((state) => state.user.userId);
-
-  console.log('userid reservation:', userId);
+  const userData = useSelector((state) => state.user.userId);
+  const userId = userData;
   const [formData, setFormData] = useState({
     reserve_date: '',
     city_name: '',
@@ -97,11 +96,12 @@ const Reservation = () => {
                     name="reserve_date"
                     value={formData.reserve_date}
                     onChange={handleChange}
+                    required
                   />
                 </label>
               </div>
               <div>
-                <select id="city_name" name="city_name" value={formData.city_name} onChange={handleChange} className="select-city-btn">
+                <select id="city_name" name="city_name" value={formData.city_name} onChange={handleChange} className="select-city-btn" required>
                   <option value="">Select a city</option>
                   {citynames.map((city) => (
                     <option key={city.id} value={city.city_name}>
