@@ -58,7 +58,6 @@ const AddMotor = () => {
   const handleCombinedSubmit = (e) => {
     e.preventDefault();
     const token = localStorage.getItem('token');
-    console.log('Token:', token);
 
     const combinedData = {
       stores_location: {
