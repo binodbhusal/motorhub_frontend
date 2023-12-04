@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 export const TOKENKEY = 'token';
 export const USERKEY = 'user';
 
@@ -26,7 +27,12 @@ export const getToken = () => {
 
 export const getUser = () => {
   const storedUser = localStorage.getItem(USERKEY);
-  return storedUser ? JSON.parse(storedUser) : null;
+  try {
+    return storedUser ? JSON.parse(storedUser) : null;
+  } catch (error) {
+    console.error('Error parsing user data:', error);
+    return null;
+  }
 };
 
 export const storeSession = (user, token) => {
