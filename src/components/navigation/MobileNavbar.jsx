@@ -45,20 +45,20 @@ const MobileNavbar = () => {
         </ul>
 
         <div className="social-media-container">
-          <a href="#">
+          <a href="#" aria-label="Facebook">
             <i className="bi bi-facebook" />
           </a>
-          <a href="#">
+          <a href="#" aria-label="Twitter">
             <i className="bi bi-twitter" />
           </a>
 
-          <a href="#">
+          <a href="#" aria-label="Twitter">
             <i className="bi bi-twitter" />
           </a>
-          <a href="#">
+          <a href="#" aria-label="GitHub">
             <i className="bi bi-github" />
           </a>
-          <a href="#">
+          <a href="#" aria-label="Instagram">
             <i className="bi bi-instagram" />
           </a>
         </div>
