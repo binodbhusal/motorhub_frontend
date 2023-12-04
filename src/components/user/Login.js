@@ -85,77 +85,83 @@ const Login = () => {
   };
 
   return (
-    <section className="log-section">
-      <p ref={errRef} className={errMsg ? 'errmsg' : 'offscreen'} aria-live="assertive">
-        {errMsg}
-      </p>
-      <h1 className="text-xl">Sign In</h1>
-      <form onSubmit={handleSubmit}>
-        {/* Your form inputs and UI elements */}
-        <div>
-          <label htmlFor="email" className="flex justify-start items-center mt-2">
-            Email:
-            <input
-              type="email"
-              id="email"
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              value={formData.email}
-              required
-              ref={emailRef}
-              name="email"
-              className="text-lg rounded-md m-1 w-full px-2"
-            />
-          </label>
-        </div>
+    <section className="min-h-screen flex items-center justify-center md:bg-l-green w-full">
+      <div className="bg-grey rounded-2xl flex md:p-6 ">
+        <div className="ml-12 w-full md:p-6 md:ml-6">
 
-        <label htmlFor="pwd" className="flex justify-start items-center mt-2">
-          Password:
-          <div className="password-input">
-            <input
-              type={showPwd ? 'text' : 'password'}
-              id="pwd"
-              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-              value={formData.password}
-              name="password"
-              className="text-lg rounded-md m-1 w-full px-2"
-              required
-            />
+          <p ref={errRef} className={errMsg ? 'errmsg' : 'offscreen'} aria-live="assertive">
+            {errMsg}
+          </p>
+          <p className="text-green mb-4 text-1xl  mt-3">Welcome to Motorhub</p>
 
-            <div
-              className="password-toggle"
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  setShowPwd(!showPwd);
-                }
-              }}
-              onClick={() => setShowPwd(!showPwd)}
-            >
-              {showPwd ? <FaEye /> : <FaEyeSlash />}
+          <h4 className="text-green mb-4 text-xl font-semibold mt-3">Please Log in</h4>
+          <form onSubmit={handleSubmit}>
+            {/* Your form inputs and UI elements */}
+            <div>
+              <label htmlFor="email" className="flex justify-start items-center mt-2 ">
+                Email
+                <input
+                  type="email"
+                  id="email"
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  value={formData.email}
+                  required
+                  ref={emailRef}
+                  name="email"
+                  className=" rounded-lg  emailtxt focus:px-2"
+                />
+              </label>
             </div>
-          </div>
-        </label>
-        <button
-          type="submit"
-          className={`${
-            formData.email && formData.password
-              ? 'bg-primary text-yellow-50 mt-3 rounded-lg mx-1'
-              : 'bg-innactiveBtn mt-3 text-yellow-50  rounded-lg mx-1'
-          }`}
-        >
-          Sign In
-        </button>
-      </form>
-      <p>
-        Need an Account?
-        <br />
-        <span className="line bg-secondary px-2 rounded-lg">
-          <a href="SignUp">Sign Up</a>
-        </span>
-      </p>
+
+            <label htmlFor="pwd" className="flex justify-start items-center mt-2">
+              Password
+              <div className="password-input flex items-center">
+                <input
+                  type={showPwd ? 'text' : 'password'}
+                  id="pwd"
+                  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                  value={formData.password}
+                  name="password"
+                  className="rounded-lg  passtxt mt-2 ml-[-12] focus:px-2"
+                  required
+                />
+
+                <div
+                  className="relative right-[20px] mt-2"
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      setShowPwd(!showPwd);
+                    }
+                  }}
+                  onClick={() => setShowPwd(!showPwd)}
+                >
+                  {showPwd ? <FaEye /> : <FaEyeSlash />}
+                </div>
+              </div>
+            </label>
+            <button
+              type="submit"
+              className={`${
+                formData.email && formData.password
+                  ? 'bg-green text-yellow-50 mt-3 text-white w-[95%] h-9  rounded-lg mx-1'
+                  : 'bg-purple mt-3 text-white w-[95%] h-9 rounded-lg mx-1'
+              }`}
+            >
+              Log In
+            </button>
+          </form>
+          <p className="mt-3">
+            <span className="text-green">Need an Account?</span>
+            <br />
+            <span className="text-blue bg-white p-1 px-3 rounded-lg">
+              <a href="SignUp">Sign Up</a>
+            </span>
+          </p>
+        </div>
+      </div>
     </section>
   );
 };
-
 export default Login;
