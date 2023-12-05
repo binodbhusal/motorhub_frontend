@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './MobileNabar.scss';
 import { NavLink } from 'react-router-dom';
-
+import Log from '../user/Logout';
 import logo from '../../assets/logo.png';
 
 const links = [
@@ -33,14 +33,15 @@ const MobileNavbar = () => {
         </div>
       </div>
       <div className={`navigation-item ${menuOpen ? 'open' : ''}`}>
-        <ul className="ul-element">
+        <ul className="ul-element gap-6">
           {links.map((link) => (
-            <li key={link.text} className="nav-link">
+            <li key={link.text} className="nav-link mt-3">
               <NavLink to={link.path} className="navlink-class">
                 <p className="nav-item">{link.text}</p>
               </NavLink>
             </li>
           ))}
+          <span className="absolute mr-96 mt-12"><Log /></span>
 
         </ul>
 
