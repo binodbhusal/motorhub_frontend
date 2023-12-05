@@ -31,7 +31,11 @@ const Log = () => {
           type="submit"
           onClick={handleLogout}
         >
-          <span className="">Logout</span>
+          <span className="bg-purple  text-white w-full h-10 py-2 px-4
+           rounded-lg mx-1"
+          >
+            Logout
+          </span>
         </button>
       </div>
     );
@@ -42,8 +46,10 @@ const Log = () => {
       type="button"
       htmlFor="btnlogin"
       onClick={handleLogin}
+      className="bg-green  text-white w-full h-10 py-1 px-4
+           rounded-lg md:ml-6"
     >
-      Please login
+      Login
       {' '}
 
     </button>

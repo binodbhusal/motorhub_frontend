@@ -29,7 +29,7 @@ const MotorDetails = () => {
 
       <div className="lifestyle-container grid-details">
         <div className="img-container">
-          <img src={motorDetail.photo} alt="Car" />
+          <img src={motorDetail.photo} alt="Car" className="rounded-lg" />
         </div>
         <div className="details-cont">
           <h2>
@@ -39,29 +39,33 @@ const MotorDetails = () => {
           </h2>
           <div className="info-motor-cont">
             <p>
-              <span>Model No:</span>
+              <span className="font-semibold">Model No:</span>
               {' '}
               <span>{motorDetail.model_no}</span>
             </p>
             <p>
-              <span>Manufacturer:</span>
+              <span className="font-semibold">Manufacturer:</span>
               {' '}
               <span>{motorDetail.manufacturer}</span>
             </p>
             <p>
-              <span>Manufacturer Date:</span>
+              <span className="font-semibold">Manufacturer Date:</span>
               {' '}
               <span>{motorDetail.manufacture_date}</span>
             </p>
             <p>
-              <span>Total Price:</span>
+              <span className="font-semibold">Total Price:</span>
               {' '}
-              <span>{motorDetail.total_price}</span>
+              <span>
+                $
+                {' '}
+                {motorDetail.total_price}
+              </span>
             </p>
           </div>
 
           <Link to={`/reserveform/${motorDetail.id}?user_id=${userId}`}>
-            <button className="reserve-btn" type="button">
+            <button className="reserve-btn hover:bg-d-green transition duration-500" type="button">
               <i className="fa-sharp fa-solid fa-gear" />
               <span>Reserve</span>
             </button>

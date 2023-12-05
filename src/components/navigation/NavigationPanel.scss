@@ -33,12 +33,8 @@
         margin-bottom: 15px;
         width: 100%;
 
-        .navlink-class {
+        .navlink:hover {
           text-decoration: none;
-
-          .active {
-            background-color: var(--secondary-color);
-          }
         }
 
         .nav-item {
@@ -49,12 +45,6 @@
           width: 100%;
           height: 100%;
           text-transform: uppercase;
-        }
-
-        .nav-item:not(.active):hover {
-          background-color: var(--secondary-color);
-          color: var(--white-color);
-          text-align: center;
         }
       }
     }

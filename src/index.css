@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --font-base: "DM Sans", sans-serif;
   --primary-color: #ecf0f4;
@@ -26,4 +30,20 @@ a {
 
 li {
   list-style: none;
+}
+
+.emailtxt {
+  width: 305px;
+  height: 40px;
+  outline: none;
+  margin-left: 40px;
+  border: 1px solid #d3d3d3;
+}
+
+.passtxt {
+  width: 305px;
+  height: 40px;
+  outline: none;
+  margin-left: 10px;
+  border: 1px solid #d3d3d3;
 }

@@ -42,8 +42,8 @@ const AddMotor = () => {
 
   const handleUnitPriceChange = (e) => {
     const unitPrice = parseFloat(e.target.value);
-    const purchaseFee = unitPrice * 0.2;
-    const financeFee = unitPrice * 0.1;
+    const purchaseFee = unitPrice * 0.01;
+    const financeFee = unitPrice * 0.03;
     const totalPrice = unitPrice + purchaseFee + financeFee;
 
     setMotorData({
@@ -79,7 +79,7 @@ const AddMotor = () => {
         <div className="form-container">
           <form onSubmit={handleCombinedSubmit} className="submit-form">
             <div className="location-container">
-              <h5>Add Location Name:</h5>
+              <h5>Add Store Location:</h5>
               <div className="form-group location-input">
                 <input
                   type="text"
@@ -155,7 +155,7 @@ const AddMotor = () => {
                 <div className="form-group">
                   <input
                     className="form-control"
-                    placeholder="Unit Price:"
+                    placeholder="Unit Price$:"
                     type="number"
                     name="unit_price"
                     value={motorData.unit_price}
@@ -166,7 +166,7 @@ const AddMotor = () => {
                 <div className="form-group">
                   <input
                     className="form-control"
-                    placeholder="Purchase Fee:"
+                    placeholder="Purchase Fee$:"
                     type="number"
                     name="purchase_fee"
                     value={motorData.purchase_fee}
@@ -177,7 +177,7 @@ const AddMotor = () => {
                 <div className="form-group">
                   <input
                     className="form-control"
-                    placeholder=" Finance Fee:"
+                    placeholder=" Finance Fee$:"
                     type="number"
                     name="finance_fee"
                     value={motorData.finance_fee}
@@ -188,7 +188,7 @@ const AddMotor = () => {
                 <div className="form-group">
                   <input
                     className="form-control"
-                    placeholder="Total Price:"
+                    placeholder="Total Price$:"
                     type="number"
                     name="total_price"
                     value={motorData.total_price}
