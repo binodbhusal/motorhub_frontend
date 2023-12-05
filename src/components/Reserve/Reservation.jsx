@@ -97,11 +97,14 @@ const Reservation = () => {
                     value={formData.reserve_date}
                     onChange={handleChange}
                     required
+                    className="border border-d-green rounded-md px-3 mt-1 focus:outline-none"
+
                   />
                 </label>
               </div>
               <div>
-                <select id="city_name" name="city_name" value={formData.city_name} onChange={handleChange} className="select-city-btn" required>
+                Location:
+                <select id="city_name" name="city_name" value={formData.city_name} onChange={handleChange} className="border border-d-green rounded-md px-4 md:w-[39%] py-2 mt-1 focus:outline-none ml-10" required>
                   <option value="">Select a city</option>
                   {citynames.map((city) => (
                     <option key={city.id} value={city.city_name}>
@@ -110,7 +113,7 @@ const Reservation = () => {
                   ))}
                 </select>
               </div>
-              <button type="submit" className="reserve-motor-btn">Reserve Motor</button>
+              <button type="submit" className="bg-green p-2 px-2 mt-3 hover:bg-d-green mb-3 transition duration-300 rounded-lg text-white">Reserve Motor</button>
             </form>
             {!motorDetail && (
             <p>
