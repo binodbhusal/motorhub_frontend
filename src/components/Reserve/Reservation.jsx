@@ -72,14 +72,14 @@ const Reservation = () => {
               <p>
                 Brand Name:
                 {' '}
-                <span className="bold-reservaiton">
+                <span className="bold-reservaiton ml-3">
                   {motorDetail.brand_name}
                 </span>
               </p>
               <p>
                 Model No:
                 {' '}
-                <span className="bold-reservaiton">
+                <span className="bold-reservaiton ml-8">
                   {motorDetail.model_no}
                 </span>
               </p>
@@ -104,7 +104,7 @@ const Reservation = () => {
               </div>
               <div>
                 Location:
-                <select id="city_name" name="city_name" value={formData.city_name} onChange={handleChange} className="border border-d-green rounded-md px-4 md:w-[39%] py-2 mt-1 focus:outline-none ml-10" required>
+                <select id="city_name" name="city_name" value={formData.city_name} onChange={handleChange} className="border border-d-green rounded-md px-4 md:w-[37%] py-2 mt-1 focus:outline-none ml-10" required>
                   <option value="">Select a city</option>
                   {citynames.map((city) => (
                     <option key={city.id} value={city.city_name}>
@@ -135,7 +135,7 @@ const Reservation = () => {
             )}
             <p>
 
-              <Link to="/">Click here</Link>
+              <Link to="/">Click here </Link>
 
               to select a motors if you have not selected
             </p>
