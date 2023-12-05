@@ -1,6 +1,6 @@
 .lifestyle-container.grid-details {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
   margin-left: 20%;
   padding: 5% 5% 5% 10%;
@@ -13,10 +13,11 @@
 .details-cont h2 {
   text-align: end;
   margin-bottom: 10px;
+  font-weight: bolder;
 }
 
 .info-motor-cont p {
-  font-size: 18px;
+  font-size: 16px;
   padding: 0 10px;
   display: flex;
   justify-content: space-between;
@@ -24,16 +25,17 @@
 
 .info-motor-cont p:nth-child(even) {
   background: #e2e3e5;
-  padding: 15px 20px;
+  padding: 10px 10px;
+  border-radius: 10px;
 }
 
 .reserve-btn {
-  background: rgb(41, 41, 68);
+  background: #234C63;
   float: right;
   margin-top: 50px;
   color: #fff;
   border: none;
-  height: 70px;
+  height: 50px;
   width: 200px;
   border-radius: 70px;
   font-size: 20px;
