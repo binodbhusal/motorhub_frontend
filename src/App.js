@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import MainPage from './components/mainpage/MainPage';
 import MyReservations from './components/MyReservations/MyReservations';
 import AddMotor from './components/AddMotor/AddMotor';
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="app-container">
       <Router>
+        <ToastContainer />
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
