@@ -29,14 +29,6 @@ const Login = () => {
   useEffect(() => {
     setErrMsg('');
   }, [formData.email, formData.password]);
-  // const fetchUserbyEmail = async (email) => {
-  //   try {
-  //     const response = await axios.get(`http://localhost:3000/api/users?email=${email}`);
-  //     return response.data;
-  //   } catch (error) {
-  //     throw new Error('Error fetching user data');
-  //   }
-  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -87,7 +79,7 @@ const Login = () => {
   return (
     <section className="min-h-screen flex items-center justify-center md:bg-l-green w-full">
       <div className="bg-grey rounded-2xl flex md:p-6 ">
-        <div className="ml-12 w-full md:p-6 md:ml-6">
+        <div className="ml-12 w-full  md:ml-6">
 
           <p ref={errRef} className={errMsg ? 'errmsg' : 'offscreen'} aria-live="assertive">
             {errMsg}
@@ -96,7 +88,7 @@ const Login = () => {
 
           <h4 className="text-green mb-4 text-xl font-semibold mt-3">Please Log in</h4>
           <form onSubmit={handleSubmit}>
-            {/* Your form inputs and UI elements */}
+            {/*  form inputs and UI elements */}
             <div>
               <label htmlFor="email" className="flex justify-start items-center mt-2 ">
                 Email
@@ -155,8 +147,8 @@ const Login = () => {
           <p className="mt-3">
             <span className="text-green">Need an Account?</span>
             <br />
-            <span className="text-blue bg-white p-1 px-3 rounded-lg">
-              <a href="SignUp">Sign Up</a>
+            <span>
+              <a href="SignUp" className="text-blue hover:text-d-green">Sign Up</a>
             </span>
           </p>
         </div>
