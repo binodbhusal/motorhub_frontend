@@ -6,33 +6,20 @@ import { BrowserRouter as Router } from 'react-router-dom'; // Import the Browse
 
 import AddMotor from '../AddMotor/AddMotor';
 
-const mockStore = configureStore({
-  location: {
-    city_name: '',
-  },
-  fetchdata: {
-    location_id: null,
-    brand_name: '',
-    model_no: '',
-    manufacturer: '',
-    manufacture_date: '',
-    description: '',
-    photo: '',
-    unit_price: '',
-    purchase_fee: '',
-    finance_fee: '',
-    total_price: '',
-  },
-});
+const mockStore = configureStore([]);
 
 describe('AddMotor Component', () => {
   let store;
   beforeEach(() => {
     store = mockStore({
+      user: {
+        userId: 1, // Mock userId for testing
+      },
       location: {
         city_name: '',
       },
       fetchdata: {
+        user_id: null,
         location_id: null,
         brand_name: '',
         model_no: '',
