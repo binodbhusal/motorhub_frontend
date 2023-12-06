@@ -65,8 +65,8 @@ The Motorhub - Online Motor Reservation System is a web application designed to 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Here's the link to my deployed project:
-> Click on this [Motorhub Live Demo](https://motorhub.netlify.app/) to view the live-demo of project
+
+ Click on this [Motorhub Live Demo](https://motorhub.netlify.app/) to view the live-demo of project
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -144,7 +144,7 @@ npm test
 
 # 🔭 Future Features:
 
-- implement Authorization
+- Implement Authorization
 
 ## 🤝 Contributing <a name="contributing"></a>
 
