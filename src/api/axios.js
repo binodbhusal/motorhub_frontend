@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default axios.create({
 
-  baseURL: 'http://localhost:3000',
-  REGISTER_URL: 'http://localhost:3000/users',
-  LOGIN_URL: 'http://localhost:3000/users/sign_in',
+  baseURL: 'https://motorhubbackend-production.up.railway.app',
+  REGISTER_URL: 'https://motorhubbackend-production.up.railway.app/users',
+  LOGIN_URL: 'https://motorhubbackend-production.up.railway.app/users/sign_in',
 });
