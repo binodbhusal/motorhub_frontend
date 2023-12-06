@@ -8,7 +8,7 @@ import axios from '../../api/axios';
 import 'react-toastify/dist/ReactToastify.css';
 import { setUser } from '../../redux/slice/userSlice';
 
-const LOGIN_URL = 'http://localhost:3000/users/sign_in';
+const LOGIN_URL = 'https://motorhubbackend-production.up.railway.app/users/sign_in';
 
 const Login = () => {
   const dispatch = useDispatch();

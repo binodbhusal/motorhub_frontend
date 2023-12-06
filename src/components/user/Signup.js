@@ -10,7 +10,7 @@ const Signup = () => {
   const [errMsg, setErrMsg] = useState('');
   const navigate = useNavigate();
 
-  const REGISTER_URL = '/users'; // Use a relative path here
+  const REGISTER_URL = 'https://motorhubbackend-production.up.railway.app/users';
 
   const handleSubmit = async (e) => {
     e.preventDefault();

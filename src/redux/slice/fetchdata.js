@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:3000/api/motors';
+const API_BASE_URL = 'https://motorhubbackend-production.up.railway.app/api/motors';
 
 // Fetch motors data from the API
 export const fetchMotoData = createAsyncThunk(
@@ -40,7 +40,7 @@ export const createReservation = createAsyncThunk('reserve',
   async ({ reserveData, userId }, { rejectWithValue }) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post(`http://localhost:3000/api/users/${userId}/reservations`, reserveData, {
+      const response = await axios.post(`https://motorhubbackend-production.up.railway.app/api/users/${userId}/reservations`, reserveData, {
         headers: {
           Authorization: `${token}`,
         },
@@ -55,7 +55,7 @@ export const fetchReservations = createAsyncThunk('reservations',
   async (userId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get(`http://localhost:3000/api/users/${userId}/reservations`, {
+      const response = await axios.get(`https://motorhubbackend-production.up.railway.app/api/users/${userId}/reservations`, {
         headers: {
           Authorization: `${token}`,
         },
