@@ -34,6 +34,10 @@
 The Motorhub - Online Motor Reservation System is a web application designed to provide users with the ability to reserve, view, and manage motors such as cars and bikes reservation for purchases. The system aims to streamline the process of finding and booking motors from various locations, making it convenient for both users and motor providers.
 ![Motorhub Screenshot](./motorhubbg.png)
 
+  ```json
+email: motor@testmail.com
+password: 123456
+```
 <!-- ER diagram"-->
 
 #### Link to [Backend](https://github.com/binodbhusal/motorhub_backend.git)
