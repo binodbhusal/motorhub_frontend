@@ -70,7 +70,7 @@ password: 123456
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
- Click on this [Motorhub Live Demo](https://motorhub.netlify.app/) to view the live-demo of project
+currently not available.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
